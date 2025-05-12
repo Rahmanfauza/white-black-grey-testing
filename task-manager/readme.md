@@ -37,4 +37,24 @@ Task Manager adalah aplikasi berbasis web yang membantu pengguna dalam mengorgan
 | Pengembang         | [Rahman Fauza, Aida Sucia, Muhammad Hafizha Ramadhani]   |
 | NIM/NPM            | 20221310034, 2022131001, 20221310027      |
 
+# Dokumentasi Fitur
+
+## Register
+| Input               | Screenshot |
+|---------------------|------------|
+| Form register (username, email, password,) | ![Register](link-screenshot-register) |
+| Validasi input kosong | ![Validasi](link-screenshot-validasi) |
+
+## Login
+| Input               | Screenshot |
+|---------------------|------------|
+| Form login (username & password) | ![Login](link-screenshot-login) |
+| Tampilan error login | ![Error](link-screenshot-error) |
+
+## Dashboard
+| Komponen          | Screenshot |
+|-------------------|------------|
+| Tampilan utama dashboard | ![Dashboard](link-screenshot-dashboard) |
+| Menu navigasi | ![Menu](link-screenshot-menu) |
+
 
