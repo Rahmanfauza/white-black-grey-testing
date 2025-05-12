@@ -1,3 +1,3 @@
 # Dokumentasi Proyek
 
-📌 [Lihat Dokumentasi Testing disini](testing.md)  
+📌 [Lihat Dokumentasi Testing disini](hasil_testing.md)  
