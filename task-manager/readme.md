@@ -19,6 +19,7 @@ Task Manager adalah aplikasi berbasis web yang membantu pengguna dalam mengorgan
 - **Database**: SQLite
   
   **Task-Manager**
+  
 | Keterangan         | Informasi        |
 | ------------------ | ---------------- |
 | Nama Aplikasi      | Task Manager   |
