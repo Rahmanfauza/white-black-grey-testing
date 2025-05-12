@@ -1,6 +1,6 @@
 | Komponen        | Deskripsi Pemeriksaan                                          | Hasil Pemeriksaan                             | Screenshot Code                         | Screenshot Tampilan                   |
 | --------------- | -------------------------------------------------------------- | --------------------------------------------- | --------------------------------------- | ------------------------------------- |
 | `register()`    | Input disimpan di DB dengan `generate_password_hash()`         | ✔️ Password tersimpan dalam bentuk hash       | ![](code1.png) | ![](tamp1.png)      |
-| `login()`       | Password diverifikasi dengan `check_password_hash()`           | ✔️ Login berhasil jika password benar         | ![](screenshots/code_login.png)         | ![](screenshots/ui_login_success.png) |
-| `add_task()`    | Waktu Jakarta (`get_jakarta_time()`) disimpan dalam ISO format | ✔️ Timestamp disimpan dengan benar            | ![](screenshots/code_add_task.png)      | ![](screenshots/ui_task_added.png)    |
-| `delete_task()` | Hanya user dengan `user_id` yang sesuai bisa menghapus task    | ✔️ Hanya task milik sendiri yang bisa dihapus | ![](screenshots/code_delete_task.png)   | ![](screenshots/ui_task_deleted.png)  |
+| `login()`       | Password diverifikasi dengan `check_password_hash()`           | ✔️ Login berhasil jika password benar         | ![](code2.png)         | ![](tamp2.png) |
+| `add_task()`    | Waktu Jakarta (`get_jakarta_time()`) disimpan dalam ISO format | ✔️ Timestamp disimpan dengan benar            | ![](code3.png)      | ![](tamp3.png)    |
+| `delete_task()` | Hanya user dengan `user_id` yang sesuai bisa menghapus task    | ✔️ Hanya task milik sendiri yang bisa dihapus | ![](code4.png)   | ![](tamp4.png)  |
