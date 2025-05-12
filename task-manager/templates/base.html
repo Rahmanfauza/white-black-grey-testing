@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/checklist.png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+<!-- Bootstrap 5 JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header class="shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+            <div class="container">
+                <!-- Brand/Logo with icon -->
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ url_for('dashboard') }}">
+                    <i class="bi bi-check2-circle me-2"></i>
+                    Task Manager
+                </a>
+                
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- Navigation Items -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center">
+                        {% if 'user_id' in session %}
+                            <!-- User Avatar & Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="me-2 d-none d-lg-inline">
+                                        <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                            <i class="bi bi-person-fill"></i>
+                                        </div>
+                                    </div>
+                                    <span class="d-none d-lg-inline">{{ session['username'] }}</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end border-0 shadow" aria-labelledby="userDropdown">
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center" href="{{ url_for('dashboard') }}">
+                                            <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <i class="bi bi-gear me-2"></i> Settings
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider my-2"></li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center text-danger" href="{{ url_for('logout') }}">
+                                            <i class="bi bi-box-arrow-right me-2"></i> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <!-- Login/Register Buttons -->
+                            <li class="nav-item me-2">
+                                <a class="btn btn-outline-light rounded-pill px-3" href="{{ url_for('login') }}">
+                                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-light rounded-pill px-3 text-primary" href="{{ url_for('register') }}">
+                                    <i class="bi bi-person-plus me-1"></i> Register
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <style>
+        .navbar {
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+        }
+        .dropdown-menu {
+            min-width: 200px;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #0d6efd;
+        }
+    </style>
+    
+    
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="mb-2 mb-md-0">
+                    <span class="d-inline-block me-2">
+                        <i class="bi bi-check2-circle"></i>
+                    </span>
+                    <span>Task Manager &copy; 2025</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white text-decoration-none small">Privacy</a>
+                    <a href="#" class="text-white text-decoration-none small">Terms</a>
+                    <a href="#" class="text-white text-decoration-none small">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        footer {
+            font-size: 0.9rem;
+        }
+        footer a {
+            transition: opacity 0.2s ease;
+        }
+        footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline !important;
+        }
+    </style>
+    
+    <style>
+        footer a {
+            transition: all 0.3s ease;
+        }
+        footer a:hover {
+            color: rgba(255, 255, 255, 0.75) !important;
+            text-decoration: underline !important;
+        }
+        .bi {
+            transition: transform 0.3s ease;
+        }
+        .bi:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
