@@ -8,29 +8,35 @@ Task Manager adalah aplikasi berbasis web yang membantu pengguna dalam mengorgan
 
 - **Manajemen Tugas**:
   - Buat, edit, dan hapus tugas
-  - Kategorikan tugas berdasarkan proyek/tag
-  - Prioritas tugas (tinggi, sedang, rendah)
-  - Tenggat waktu dan pengingat
 
 - **Antarmuka Pengguna**:
   - Tampilan daftar tugas yang terorganisir
-  - Tampilan kalender untuk tugas berjangka waktu
-  - Mode gelap/terang
-
-- **Produktivitas**:
-  - Statistik penyelesaian tugas
-  - Pencarian dan penyaringan tugas
-  - Drag-and-drop untuk mengatur tugas
-
-- **Kolaborasi** (opsional):
-  - Berbagi tugas dengan pengguna lain
-  - Komentar pada tugas
 
 ## Teknologi yang Digunakan
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Backend**: python
 - **Database**: SQLite
+  
+  **Task-Manager**
+| Keterangan         | Informasi        |
+| ------------------ | ---------------- |
+| Nama Aplikasi      | Task Manager   |
+| Bahasa Pemrograman | Python 3 (Flask) |
+| sumber daya pendukung | html, css, javaScript |
+| Database           | SQLite           |
+| Modul Utama        | `app.py`         |
+| Pengembang         | [Rahman Fauza, Aida Sucia, Muhammad Hafizha Ramadhani]   |
+| NIM/NPM            | 20221310034, 2022131001, 20221310027      |
+
+**Cara penggunaan**
+1. download source code
+2. ekstrak
+3. open code editor
+4. run requirements.txt
+5. open url local host
+6. enjoy :D
+
 
 
 Aplikasi ini dikembangkan oleh [Kelompok 11].
