@@ -37,6 +37,8 @@ Data Flow Testing bertujuan untuk:
 | `add_task()`     | Menyimpan data task ke database berdasarkan input user        |
 | `login()`        | Verifikasi kredensial user dan menyimpan `user_id` ke session|
 | `delete_task()`  | Menghapus task berdasarkan `task_id` dan `user_id` dari session|
+| `dashboard()`    | melihat apakah semua sudah sesuai dengan alur|
+
 
 ---
 
