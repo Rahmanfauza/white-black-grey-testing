@@ -48,7 +48,7 @@ Data Flow Testing bertujuan untuk:
 
 ## 🧪 Hasil Pengujian
 
-Lihat file [`hasil_testing.md`](./hasil_testing.md) untuk tabel pengujian lengkap dengan:
+Lihat file [`hasil_testing.md`](./Hasil_testing.md) untuk tabel pengujian lengkap dengan:
 - Deskripsi penggunaan variabel
 - Hasil yang diharapkan
 - Screenshot kode dan tampilan
