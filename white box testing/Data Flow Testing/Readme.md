@@ -13,17 +13,18 @@ Data Flow Testing bertujuan untuk:
 
 ---
 
-## 📁 Struktur Direktori
-data-flow-testing/
-├── README.md
-├── hasil_testing.md
-├── screenshots/
-│ ├── add_task_code.png
-│ ├── add_task_ui.png
-│ ├── login_code.png
-│ ├── login_ui.png
-├── diagrams/
-│ └── add_task_flowchart.png
+## 📂 Struktur Direktori
+
+- **data-flow-testing/**
+  - `README.md`
+  - `hasil_testing.md`
+  - **diagrams/**
+    - `dd_task_flowchart.png`
+  - **screenshots/**
+    - `add_task_code.png`
+    - `add_task_ui.png`
+    - `login_code.png`
+    - `login_ui.png`
 
 
 
