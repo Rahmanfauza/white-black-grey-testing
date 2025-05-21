@@ -1,6 +1,6 @@
 | Bagian          | Komponen        | Deskripsi Pemeriksaan                                                  | Hasil Pemeriksaan                         | Screenshot Code        | Screenshot Tampilan  |
 | --------------- | --------------- | ---------------------------------------------------------------------- | ----------------------------------------- | ---------------------- | -------------------- |
-| Manajemen Tugas | `add_task()`    | Variabel `title`, `description` didefinisikan lalu digunakan di query  | ✔️ Data berhasil ditambahkan ke database  | `add_task_code.png`    | `add_task_ui.png`    |
+| Manajemen Tugas | `add_task()`    | Variabel `title`, `description` didefinisikan lalu digunakan di query  | ✔️ Data berhasil ditambahkan ke database  | `/add_task_code.png.png`    | `add_task_ui.png`    |
 | Autentikasi     | `login()`       | Variabel `username`, `password` divalidasi di DB dan digunakan session | ✔️ Login berhasil jika data valid         | `login_code.png`       | `login_ui.png`       |
 | Manajemen Tugas | `delete_task()` | Variabel `task_id` digunakan untuk DELETE berdasarkan user login       | ✔️ Task berhasil dihapus sesuai hak akses | `delete_task_code.png` | `delete_task_ui.png` |
 | Dashboard       | `dashboard()`   | Mengambil `user_id` dari session, tampilkan task via loop              | ✔️ Daftar task tampil sesuai user login   | `dashboard_code.png`   | `dashboard_ui.png`   |
