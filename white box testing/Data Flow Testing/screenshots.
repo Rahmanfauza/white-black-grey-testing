@@ -1,5 +1,0 @@
-fhytim
-git pull origin main   # atau branch sesuai kamu
-git rm "path/to/file"
-git commit -m "hapus file screenshots"
-git push origin main
