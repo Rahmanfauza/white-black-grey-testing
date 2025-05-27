@@ -1,16 +1,18 @@
-🧩 Pattern Testing (Exploratory Testing)
+# 🧩 Pattern Testing (Exploratory Testing)
 
 Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativitas, dan intuisi tester. Dalam pengujian ini, tester tidak hanya mengikuti skrip pengujian formal, tapi juga mencari celah-celah bug dari interaksi pengguna nyata secara **tidak terduga**.
 
-🎯 Tujuan Pengujian
+## 🎯 Tujuan Pengujian
+
 - Mengidentifikasi bug yang tidak tertangkap oleh pengujian formal
 - Menguji aplikasi dari sisi **pengalaman pengguna**, **stabilitas**, dan **ketahanan terhadap input aneh**
 
 ---
 
-🧪 Tahapan & Skenario Pengujian
+## 🧪 Tahapan & Skenario Pengujian
 
-1. 🛠 Menguji Fungsional Dasar
+### 1. 🛠 Menguji Fungsional Dasar
+
 | Langkah | Deskripsi |
 |--------|-----------|
 | 1 | Buka aplikasi dan login sebagai user |
@@ -23,19 +25,21 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 
 ---
 
-2. 🚧 Menguji Batasan & Skenario Tidak Terduga
+### 2. 🚧 Menguji Batasan & Skenario Tidak Terduga
+
 | Skenario | Input | Ekspektasi |
 |----------|-------|------------|
-| Judul kosong | "" | Tidak boleh disimpan |
-| Judul aneh | "@@@###" | Ditolak atau disimpan tanpa error |
+| Judul kosong | `""` | Tidak boleh disimpan |
+| Judul aneh | `"@@@###"` | Ditolak atau disimpan tanpa error |
 | Deskripsi panjang | 10.000 karakter | Tetap tersimpan, tidak crash |
-| Tahun tidak valid (di register) | "abc" | Validasi muncul |
+| Tahun tidak valid (di register) | `"abc"` | Validasi muncul |
 
 📸 `screenshots/boundary_case.png`
 
 ---
 
-3. ⚙️ Menguji Performa & Stabilitas
+### 3. ⚙️ Menguji Performa & Stabilitas
+
 | Uji | Langkah | Hasil Diharapkan |
 |-----|--------|------------------|
 | Tambah 100+ tugas | Loop tambah data | Aplikasi tetap responsif |
@@ -46,7 +50,8 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 
 ---
 
-4. 🎨 Menguji Kegunaan & UX
+### 4. 🎨 Menguji Kegunaan & UX
+
 | Uji | Pertanyaan |
 |-----|------------|
 | Antarmuka | Apakah mudah digunakan? |
@@ -57,17 +62,18 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 
 ---
 
-✅ Kesimpulan
+## ✅ Kesimpulan
 
 Pattern Testing berhasil menemukan beberapa celah:
+
 - Validasi input yang bisa ditingkatkan
 - Aplikasi tetap stabil dengan banyak data
 - UX cukup baik, tapi bisa lebih jelas untuk error handling
 
 ---
-💡 Rekomendasi Perbaikan
+
+## 💡 Rekomendasi Perbaikan
+
 - Tambahkan validasi karakter pada input
 - Limit jumlah karakter maksimal
 - Tambahkan pesan error eksplisit pada semua form
-
-
