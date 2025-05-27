@@ -1,1 +1,88 @@
+# 🧩 Orthogonal Array Testing (OAT)
+
+## 📌 Deskripsi Singkat
+
+**Orthogonal Array Testing (OAT)** adalah teknik pengujian Gray Box yang menggunakan pendekatan statistik untuk menghasilkan kombinasi uji yang efisien. Ini sangat berguna ketika jumlah input sangat banyak, karena dapat mengurangi jumlah test case tanpa mengurangi cakupan pengujian.
+
+---
+
+## 🛠 Aplikasi yang Diuji
+
+- **Nama Aplikasi**: Task Manager Web App
+- **Teknologi**: Flask, SQLite
+- **Fitur yang Diuji**: Form penambahan task (`/tasks/add`)
+- **Tujuan Pengujian**: Memverifikasi apakah sistem dapat menangani berbagai kombinasi input task dengan benar
+
+---
+
+## 🔍 Faktor dan Level yang Digunakan
+
+| Faktor (Variabel)      | Level 1        | Level 2        | Level 3           |
+|------------------------|----------------|----------------|--------------------|
+| Judul Task             | Kosong         | Normal         | Sangat Panjang     |
+| Deskripsi Task         | Kosong         | Normal         | Sangat Panjang     |
+| Status Task (manual)   | `pending`      | `selesai`      | `in progress`      |
+
+> Status diatur secara manual melalui form testing tambahan atau modifikasi POST body.
+
+---
+
+## 🧪 Kombinasi Pengujian (Tabel OAT)
+
+Menggunakan array ortogonal L9(3^3), berikut adalah 9 test case yang dilakukan:
+
+| Test Case | Judul         | Deskripsi     | Status        |
+|-----------|---------------|---------------|---------------|
+| TC1       | Kosong        | Kosong        | pending       |
+| TC2       | Kosong        | Normal        | selesai       |
+| TC3       | Kosong        | Panjang       | in progress   |
+| TC4       | Normal        | Kosong        | selesai       |
+| TC5       | Normal        | Normal        | in progress   |
+| TC6       | Normal        | Panjang       | pending       |
+| TC7       | Panjang       | Kosong        | in progress   |
+| TC8       | Panjang       | Normal        | pending       |
+| TC9       | Panjang       | Panjang       | selesai       |
+
+---
+
+## ✅ Ekspektasi Hasil
+
+| Test Case | Ekspektasi Sistem                                                                 |
+|-----------|-------------------------------------------------------------------------------------|
+| TC1       | Validasi menolak (judul kosong)                                                    |
+| TC2       | Validasi menolak (judul kosong)                                                    |
+| TC3       | Validasi menolak (judul kosong)                                                    |
+| TC4       | Task berhasil ditambahkan                                                          |
+| TC5       | Task berhasil ditambahkan                                                          |
+| TC6       | Task berhasil ditambahkan                                                          |
+| TC7       | Task berhasil ditambahkan (panjang teks tidak menyebabkan error)                   |
+| TC8       | Task berhasil ditambahkan                                                          |
+| TC9       | Task berhasil ditambahkan                                                          |
+
+---
+
+## 🧾 Catatan Pengujian
+
+- Semua pengujian dilakukan dalam keadaan **user sudah login**.
+- Panjang teks yang digunakan untuk kasus "Panjang" adalah > 255 karakter.
+- Hasil yang valid disimpan di dashboard dan muncul sesuai urutan waktu (`created_at`).
+
+---
+
+## 🧠 Insight & Kesimpulan
+
+- OAT membantu meminimalkan jumlah test case, dari potensi 27 kombinasi menjadi hanya 9, **tanpa kehilangan cakupan penting**.
+- Validasi form berjalan baik untuk kasus batas seperti input kosong atau sangat panjang.
+- Performa sistem tetap stabil dengan data panjang.
+
+---
+
+## 👩‍💻 Rekomendasi Tambahan
+
+- Terapkan batas karakter maksimum di sisi klien & server untuk `title` dan `description`.
+- Tambahkan feedback langsung saat form error (contoh: "judul tidak boleh kosong").
+
+---
+
+
 
