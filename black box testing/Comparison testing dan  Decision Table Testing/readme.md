@@ -1,1 +1,51 @@
+# Comparison Testing Report
 
+## **Fitur yang Diuji**: Register, Login, dan Add Task  
+**Tujuan**: Membandingkan perubahan fungsionalitas antara versi lama (`v1.0`) dan versi baru (`v2.0`).
+
+---
+
+### **1. Fitur Register**
+#### **Perubahan**: Batas panjang username dan password (12 karakter)  
+| **Test ID** | **Input** (`username`, `email`, `password`)       | **Versi Lama (`v1.0`)**       | **Versi Baru (`v2.0`)**        | **Status** | **Catatan**                  |
+|-------------|--------------------------------------------------|-------------------------------|--------------------------------|------------|------------------------------|
+| CT-R1       | `("userbaru", "baru@mail.com", "pass123")`       | Bisa >12 karakter            | Dibatasi 12 karakter           | ✅         | Perubahan fungsionalitas     |
+| CT-R2       | `("userbaru1234567", "valid@mail.com", "pass1234567890")` | Diterima | Error: "Username/password max 12 karakter" | ⚠️ | Validasi baru |
+
+---
+
+### **2. Fitur Login**
+#### **Perubahan**: Batas panjang input dan pesan error  
+| **Test ID** | **Input** (`username`, `password`) | **Versi Lama (`v1.0`)**       | **Versi Baru (`v2.0`)**        | **Status** | **Catatan**                  |
+|-------------|------------------------------------|-------------------------------|--------------------------------|------------|------------------------------|
+| CT-L1       | `("user1234567", "pass1234567890")` | Diterima                     | Error: "Input max 12 karakter" | ⚠️       | Validasi baru di `v2.0`      |
+| CT-L2       | `("user1", "pass1")`               | Sukses                        | Sukses                         | ✅         | Tidak terpengaruh perubahan  |
+
+---
+
+### **3. Fitur Add Task**
+#### **Perubahan**: Batas panjang title (100 karakter)  
+| **Test ID** | **Input** (`title`, `description`)      | **Versi Lama (`v1.0`)**       | **Versi Baru (`v2.0`)**        | **Status** | **Catatan**                  |
+|-------------|----------------------------------------|-------------------------------|--------------------------------|------------|------------------------------|
+| CT-T1       | `(101*"a", "Deskripsi")`               | Diterima                      | Error: "Title max 100 karakter" | ⚠️       | Validasi baru di `v2.0`      |
+| CT-T2       | `("Task Pendek", "")`                   | Sukses                        | Sukses                         | ✅         | Tidak terpengaruh perubahan  |
+
+---
+
+### **Legenda Status**  
+- ✅ **Consistent**: Perilaku sama atau perubahan disengaja.  
+- ⚠️ **Changed**: Perilaku berubah karena validasi baru.  
+
+---
+
+### **Temuan Utama**  
+1. **Register & Login**:  
+   - `v2.0` menambahkan batas 12 karakter untuk username/password.  
+2. **Add Task**:  
+   - `v2.0` menambahkan batas 100 karakter untuk title.  
+
+---
+
+### **Rekomendasi**  
+1. Update dokumentasi untuk memberitahu pengguna tentang batas input baru.  
+2. Tambahkan pesan error yang lebih jelas (misal: "Username tidak boleh melebihi 12 karakter").  
