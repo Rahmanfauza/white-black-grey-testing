@@ -30,3 +30,76 @@
 
 ---
 
+# 📋 Decision Table Testing – Aplikasi Manajemen Tugas (Flask)
+
+- Register
+- Login
+- Add Task
+
+---
+
+# 📋 Decision Table Testing – Aplikasi Manajemen Tugas (Flask)
+
+---
+
+## ✅ Fitur 1: Register
+
+### Aturan
+- Username, email, dan password tidak boleh kosong.
+- Email dan username harus unik.
+- (Catatan: format email **tidak divalidasi** di kode.)
+
+### 🧪 Tabel Keputusan
+
+| TC  | Username Valid | Email Valid | Password Valid | Unik (Username & Email) | Expected Result               | Actual Result (Jika Gagal)                       |
+|-----|----------------|-------------|----------------|--------------------------|-------------------------------|--------------------------------------------------|
+| TC1 | ✔️              | ✔️           | ✔️              | ✔️                        | ✅ Registrasi berhasil         | ❌ Tidak ada                                       |
+| TC2 | ✔️              | ✔️           | ✔️              | ❌                        | ❌ Username/email duplikat    | ✅ Registrasi ditolak dengan pesan kesalahan     |
+| TC3 | ❌              | ✔️           | ✔️              | ✔️                        | ❌ Username kosong             | ✅ Registrasi tidak diproses                     |
+| TC4 | ✔️              | ❌           | ✔️              | ✔️                        | ❌ Email kosong/invalid        | ✅ Registrasi tidak diproses                     |
+| TC5 | ✔️              | ✔️           | ❌              | ✔️                        | ❌ Password kosong             | ✅ Registrasi tidak diproses                     |
+
+---
+
+## ✅ Fitur 2: Login
+
+### Aturan 
+- Username dan password tidak boleh kosong.
+- Username harus terdaftar.
+- Password harus cocok.
+
+### 🧪 Tabel Keputusan
+
+| TC  | Username Kosong | Password Kosong | Username Terdaftar | Password Cocok | Expected Result        | Actual Result (Jika Gagal)                   |
+|-----|------------------|------------------|---------------------|----------------|-------------------------|------------------------------------------------|
+| TC1 | ❌               | ❌               | ✔️                  | ✔️              | ✅ Login berhasil       | ❌ Tidak ada                                    |
+| TC2 | ✔️               | ❌               | -                   | -              | ❌ Username kosong      | ✅ Login gagal dengan pesan error              |
+| TC3 | ❌               | ✔️               | -                   | -              | ❌ Password kosong      | ✅ Login gagal dengan pesan error              |
+| TC4 | ❌               | ❌               | ❌                  | -              | ❌ Username tidak ada   | ✅ Login gagal dengan pesan: user tidak ditemukan |
+| TC5 | ❌               | ❌               | ✔️                  | ❌              | ❌ Password salah       | ✅ Login gagal dengan pesan: password salah    |
+
+---
+
+## ✅ Fitur 3: Add Task
+
+### Aturan
+- Pengguna harus login.
+- Title tidak boleh kosong.
+- Description boleh kosong.
+
+### 🧪 Tabel Keputusan
+
+| TC  | Login (Session Ada) | Title Kosong | Description Kosong | Expected Result               | Actual Result (Jika Gagal)                  |
+|-----|----------------------|---------------|---------------------|-------------------------------|----------------------------------------------|
+| TC1 | ✔️                   | ❌            | ❌                  | ✅ Task ditambahkan           | ❌ Tidak ada                                   |
+| TC2 | ✔️                   | ✔️            | ❌                  | ❌ Gagal – Title kosong        | ✅ Task tidak disimpan, flash error muncul     |
+| TC3 | ❌                   | ❌            | ❌                  | 🔁 Redirect ke login          | ✅ Tidak ada akses, diarahkan ke halaman login |
+| TC4 | ✔️                   | ❌            | ✔️                  | ✅ Task ditambahkan           | ❌ Tidak ada                                   |
+
+---
+
+## 📌 Catatan
+- Kolom **"Actual Result (Jika Gagal)"** membantu memverifikasi bahwa sistem menangani input tidak valid sesuai ekspektasi.
+- Cocok untuk pengujian manual dan dokumentasi QA formal.
+
+📁 Diperuntukkan bagi pengujian logika aplikasi manajemen tugas berbasis Flask (Python).
