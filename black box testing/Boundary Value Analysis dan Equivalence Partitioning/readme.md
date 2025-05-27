@@ -103,7 +103,7 @@
 #### Test Case:
 | ID  | Input                              | Partisi  | Expected Result               | Catatan               |
 |-----|------------------------------------|----------|--------------------------------|-----------------------|
-| T1  | `("Task valid", "Deskripsi")`     | Valid    | Task berhasil ditambahkan      | Semua input valid     |
-| T2  | `("", "Deskripsi")`               | Invalid  | Error: "Title kosong"          | Title kosong          |
-| T3  | `("Task", "")`                    | Invalid    | Task berhasil ditambahkan      | Description boleh kosong |
+| EP1  | `("Task valid", "Deskripsi")`     | Valid    | Task berhasil ditambahkan      | Semua input valid     |
+| EP2  | `("", "Deskripsi")`               | Invalid  | Error: "Title kosong"          | Title kosong          |
+| EP3  | `("Task", "")`                    | Valid    | Task berhasil ditambahkan      | Description boleh kosong |
 
