@@ -23,14 +23,6 @@
 
 ---
 
-### **3. Fitur Add Task**
-#### **Perubahan**: Batas panjang title (100 karakter)  
-| **Test ID** | **Input** (`title`, `description`)      | **Versi Lama (`v1.0`)**       | **Versi Baru (`v2.0`)**        | **Status** | **Catatan**                  |
-|-------------|----------------------------------------|-------------------------------|--------------------------------|------------|------------------------------|
-| CT-T1       | `(101*"a", "Deskripsi")`               | Diterima                      | Error: "Title max 100 karakter" | ⚠️       | Validasi baru di `v2.0`      |
-| CT-T2       | `("Task Pendek", "")`                   | Sukses                        | Sukses                         | ✅         | Tidak terpengaruh perubahan  |
-
----
 
 ### **Legenda Status**  
 - ✅ **Consistent**: Perilaku sama atau perubahan disengaja.  
@@ -38,14 +30,3 @@
 
 ---
 
-### **Temuan Utama**  
-1. **Register & Login**:  
-   - `v2.0` menambahkan batas 12 karakter untuk username/password.  
-2. **Add Task**:  
-   - `v2.0` menambahkan batas 100 karakter untuk title.  
-
----
-
-### **Rekomendasi**  
-1. Update dokumentasi untuk memberitahu pengguna tentang batas input baru.  
-2. Tambahkan pesan error yang lebih jelas (misal: "Username tidak boleh melebihi 12 karakter").  
