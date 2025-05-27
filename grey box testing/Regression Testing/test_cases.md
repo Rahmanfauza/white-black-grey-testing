@@ -4,7 +4,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 1. Login
+## ✅ Login
 
 - **Langkah**:
   1. Buka `/login`
@@ -15,7 +15,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 2. Register
+## ✅ Register
 
 - **Langkah**:
   1. Buka `/register`
@@ -26,7 +26,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 3. Tambah Tugas
+## ✅ Tambah Tugas
 
 - **Langkah**:
   1. Login
@@ -38,7 +38,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 4. Lihat Daftar Tugas
+## ✅ Lihat Daftar Tugas
 
 - **Langkah**:
   1. Login
@@ -49,7 +49,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 5. Lihat Detail Tugas
+## ✅ Lihat Detail Tugas
 
 - **Langkah**:
   1. Klik salah satu tugas dari dashboard
@@ -59,7 +59,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 6. Update Status Tugas
+## ✅ Update Status Tugas
 
 - **Langkah**:
   1. Buka detail tugas
@@ -70,7 +70,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 7. Hapus Tugas
+## ✅ Hapus Tugas
 
 - **Langkah**:
   1. Buka detail tugas
@@ -81,7 +81,7 @@ Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penamba
 
 ---
 
-## ✅ 8. Logout
+## ✅ Logout
 
 - **Langkah**:
   1. Klik logout
