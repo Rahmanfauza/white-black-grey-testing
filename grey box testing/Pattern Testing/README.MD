@@ -69,6 +69,7 @@ Pattern Testing berhasil menemukan beberapa celah:
 - Validasi input yang bisa ditingkatkan
 - Aplikasi tetap stabil dengan banyak data
 - UX cukup baik, tapi bisa lebih jelas untuk error handling
+- aplikasi task ini tidak bisa di edit judul dan deskripsi kecuali edit status
 
 ---
 
