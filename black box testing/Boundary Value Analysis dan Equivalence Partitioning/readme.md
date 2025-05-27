@@ -47,3 +47,63 @@
 | BVA6 | Description  | 1 char           | Batas Valid    | Sukses           | Sukses              | ✔           |         |
 | BVA7| Description  | 13 chars       | Batas Invalid    | Error           |     Sukses          |  ✖            |         |
 ---
+
+# Equivalence Partitioning (EP) Test Cases
+
+## Fitur yang Diuji: Register, Login, dan Add Task
+
+### 1. Fitur Register
+**Deskripsi**: Pendaftaran user baru dengan username, email, dan password.
+
+#### Partisi Input:
+| Input     | Partisi Valid               | Partisi Invalid                 |
+|-----------|-----------------------------|----------------------------------|
+| Username  | String unik (≥1 karakter)   | Kosong/sudah ada di database    |
+| Email     | Format valid & unik         | Format invalid/sudah terdaftar  |
+| Password  | String (≥1 karakter)        | Kosong                          |
+
+#### Test Case:
+| ID  | Input                                   | Partisi  | Expected Result                  | Catatan               |
+|-----|-----------------------------------------|----------|-----------------------------------|-----------------------|
+| EP1  | `("admin", "rahmanfauza@mail.com", "123")`| Valid    | Registrasi sukses                 | Semua input valid     |
+| EP2  | `("", "rahmanfauza@mail.com", "123")`       | Invalid  | Error: "Username kosong"          | Username kosong       |
+| EP3  | `("admin", "rahmanfauzaemail", "123")`   | Invalid  | Error: "Email invalid"            | Format email salah    |
+| EP4  | `("admin", "rahmanfauza@mail.com", "")`        | Invalid  | Error: "Password kosong"          | Password kosong       |
+
+---
+
+### 2. Fitur Login
+**Deskripsi**: Autentikasi user dengan username dan password.
+
+#### Partisi Input:
+| Input     | Partisi Valid               | Partisi Invalid                 |
+|-----------|-----------------------------|----------------------------------|
+| Username  | Terdaftar di database       | Tidak terdaftar/kosong          |
+| Password  | Sesuai dengan database      | Salah/kosong                    |
+
+#### Test Case:
+| ID  | Input                     | Partisi  | Expected Result          | Catatan               |
+|-----|---------------------------|----------|---------------------------|-----------------------|
+| EP1  | `("admin", "123")`  | Valid    | Login sukses              | Credential valid      |
+| EP2  | `("", "123")`       | Invalid  | Error: "Username kosong"  | Username kosong       |
+| EP3  | `("admin", "")`           | Invalid  | Error: "Password kosong"  | Password kosong       |
+| EP4  | `("admin", "321")`      | Invalid  | Error: "Password salah"   | Password tidak match  |
+
+---
+
+### 3. Fitur Add Task
+**Deskripsi**: Menambahkan task baru dengan title dan description.
+
+#### Partisi Input:
+| Input        | Partisi Valid          | Partisi Invalid       |
+|--------------|------------------------|-----------------------|
+| Title        | String (≥1 karakter)   | Kosong                |
+| Description  | String (boleh kosong)  | -                     |
+
+#### Test Case:
+| ID  | Input                              | Partisi  | Expected Result               | Catatan               |
+|-----|------------------------------------|----------|--------------------------------|-----------------------|
+| T1  | `("Task valid", "Deskripsi")`     | Valid    | Task berhasil ditambahkan      | Semua input valid     |
+| T2  | `("", "Deskripsi")`               | Invalid  | Error: "Title kosong"          | Title kosong          |
+| T3  | `("Task", "")`                    | Invalid    | Task berhasil ditambahkan      | Description boleh kosong |
+
