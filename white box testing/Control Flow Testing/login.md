@@ -12,7 +12,7 @@ def login():
         else:
             flash('Login gagal!')
     return render_template('login.html')
-
+```
 | Kondisi Yang Diuji                         | Hasil Yang Diharapkan | Hasil Aktual | Status |
 | ------------------------------------------ | --------------------- | ------------ | ------ |
 | `request.method == 'POST'`                 | Proses login dimulai  | Sesuai       | ✅      |
