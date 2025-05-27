@@ -1,0 +1,10 @@
+﻿judul,deskripsi,status,ekspektasi
+,,pending,invalid
+,keterangan singkat,selesai,invalid
+,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a scelerisque lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer nec diam quis turpis aliquet fringilla. Curabitur…",in progress,invalid
+normal,,selesai,valid
+normal,keterangan singkat,in progress,valid
+normal,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a scelerisque lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer nec diam quis turpis aliquet fringilla. Curabitur…",pending,valid
+"Tugas sangat panjang sekali",,in progress,valid
+"Tugas sangat panjang sekali",Keterangan singkat,pending,valid
+"Tugas sangat panjang sekali","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a scelerisque lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer nec diam quis turpis aliquet fringilla. Curabitur…",selesai,valid
