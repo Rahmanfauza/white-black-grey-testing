@@ -1,4 +1,5 @@
-## register()
+## register
+
 ```python
 @app.route('/register', methods=['GET', 'POST'])
 def register():
