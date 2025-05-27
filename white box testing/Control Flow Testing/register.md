@@ -13,7 +13,7 @@ def register():
             conn.commit()
             return redirect(url_for('login'))
     return render_template('register.html')
-
+```
 | Kondisi Yang Diuji                         | Hasil Yang Diharapkan | Hasil Aktual | Status |
 | ------------------------------------------ | --------------------- | ------------ | ------ |
 | `request.method == 'POST'`                 | Proses login dimulai  | Sesuai       | ✅      |
