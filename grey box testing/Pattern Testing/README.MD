@@ -21,7 +21,7 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 | 4 | Hapus tugas |
 | 5 | Logout dan login kembali untuk cek persistensi data |
 
-📸 `screenshots/functional_test.png`
+buka di link ini untuk hasil ss nya grey box testing/Pattern Testing/screenshots/1. Menguji Fungsional Dasar
 
 ---
 
