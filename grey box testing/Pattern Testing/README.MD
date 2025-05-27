@@ -21,7 +21,15 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 | 4 | Hapus tugas |
 | 5 | Logout dan login kembali untuk cek persistensi data |
 
-![Tambah Tugas](https://github.com/[USERNAME]/white-black-grey-testing/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/tambah-tugas.png?raw=true)
+### 📸 Screenshot Pengujian Fungsional Dasar
+
+![1](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/1.png?raw=true)
+![2](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/2.png?raw=true)
+![3](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/3.png?raw=true)
+![4](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/4.png?raw=true)
+![5](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/5.png?raw=true)
+![6](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/6.png?raw=true)
+![7](https://github.com/[USERNAME]/[REPO]/blob/main/grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/7.png?raw=true)
 
 
 
