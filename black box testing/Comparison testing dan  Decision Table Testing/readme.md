@@ -44,7 +44,7 @@
 - Email dan username harus unik.
 - (Catatan: format email **tidak divalidasi** di kode.)
 
-### 🧪 Tabel Keputusan
+### Tabel
 
 | TC  | Username Valid | Email Valid | Password Valid | Unik (Username & Email) | Expected Result               | Actual Result                       |
 |-----|----------------|-------------|----------------|--------------------------|-------------------------------|--------------------------------------------------|
@@ -63,7 +63,7 @@
 - Username harus terdaftar.
 - Password harus cocok.
 
-### 🧪 Tabel Keputusan
+### Tabel 
 
 | TC  | Username Kosong | Password Kosong | Username Terdaftar | Password Cocok | Expected Result        | Actual Result                 |
 |-----|------------------|------------------|---------------------|----------------|-------------------------|------------------------------------------------|
@@ -82,7 +82,7 @@
 - Title tidak boleh kosong.
 - Description boleh kosong.
 
-### 🧪 Tabel Keputusan
+### Tabel 
 
 | TC  | Login (Session Ada) | Title Kosong | Description Kosong | Expected Result               | Actual Result                |
 |-----|----------------------|---------------|---------------------|-------------------------------|----------------------------------------------|
