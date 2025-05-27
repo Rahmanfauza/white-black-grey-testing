@@ -1,70 +1,15 @@
-# 📊 White Box Testing – Data Flow Testing (Task Manager App)
+## Data Flow Testing
 
-Dokumen ini berisi hasil pengujian **White Box Testing** dengan fokus pada teknik **Data Flow Testing** terhadap aplikasi Task Manager berbasis Flask.
+Model Data Flow Testing menelusuri bagaimana data dan variabel dideklarasikan, dimodifikasi, dan digunakan di setiap fungsi dalam program.
 
----
-
-## 📌 Tujuan
-
-Data Flow Testing bertujuan untuk:
-- Memeriksa bagaimana variabel didefinisikan (`define`) dan digunakan (`use`)
-- Menemukan potensi kesalahan seperti variabel tidak digunakan atau digunakan sebelum didefinisikan
-- Memastikan program memproses input dengan benar
-
----
-
-## 📂 Struktur Direktori
-
-- **data-flow-testing/**
-  - `README.md`
-  - `hasil_testing.md`
-  - **diagrams/**
-    - `dd_task_flowchart.png`
-  - **screenshots/**
-    - `add_task_code.png`
-    - `add_task_ui.png`
-    - `login_code.png`
-    - `login_ui.png`
-
-
-
----
-
-## 📄 Daftar Fungsi yang Diuji
-
-| Fungsi           | Tujuan                                                        |
-|------------------|---------------------------------------------------------------|
-| `add_task()`     | Menyimpan data task ke database berdasarkan input user        |
-| `login()`        | Verifikasi kredensial user dan menyimpan `user_id` ke session|
-| `delete_task()`  | Menghapus task berdasarkan `task_id` dan `user_id` dari session|
-| `dashboard()`    | melihat apakah semua sudah sesuai dengan alur|
-
-
----
-
-## 🔁 Diagram Flowchart
-
-🖼️ Lihat di folder [`diagrams/`](./diagrams/) untuk visualisasi flow fungsi `add_task()` yang diuji berdasarkan alur data.
-
----
-
-## 🧪 Hasil Pengujian
-
-Lihat file [`hasil_testing.md`](./Hasil_testing.md) untuk tabel pengujian lengkap dengan:
-- Deskripsi penggunaan variabel
-- Hasil yang diharapkan
-- Screenshot kode dan tampilan
-
----
-
-## 📌 Catatan
-
-- Semua pengujian dilakukan secara manual dengan memeriksa source code.
-- Tidak ditemukan error `use-before-define`.
-- Semua aliran data berjalan sesuai skenario yang diharapkan.
-
----
-
-
-
-
+| Komponen     | Definisi                                      | Penggunaan                                   | Deskripsi                                                                 |
+|--------------|-----------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------|
+| `username`   | Diform input di `register`, `login`           | Digunakan untuk autentikasi dan penyimpanan  | Digunakan untuk identifikasi unik user dalam sesi dan database.          |
+| `password`   | Diform input di `register`, `login`           | Digunakan untuk verifikasi                   | Disimpan dalam bentuk hash untuk keamanan, diverifikasi saat login.      |
+| `email`      | Diform input di `register`                    | Disimpan dalam database                      | Informasi tambahan yang divalidasi keunikannya saat registrasi.          |
+| `task`       | Dibentuk saat tambah, edit, dan ambil dari DB | Digunakan untuk manipulasi tampilan & update | Struktur utama yang direpresentasikan sebagai tugas per user.            |
+| `task_id`    | Parameter URL & query database                | Digunakan untuk identifikasi tugas spesifik  | ID unik untuk manipulasi task (edit, delete, complete).                  |
+| `session`    | Dibentuk saat login                           | Digunakan untuk menjaga autentikasi sesi     | Menyimpan status login dan identitas pengguna dalam sesi web.            |
+| `date`       | Diform input di tambah & update task          | Digunakan untuk filter & tampilan            | Digunakan untuk menjadwalkan tugas dan klasifikasi waktu.                |
+| `tasks`      | Hasil dari query DB di dashboard/today        | Di-loop untuk ditampilkan                    | Kumpulan data tugas yang akan dirender dalam halaman HTML.               |
+| `now`, `tz`  | Dibentuk di `tasks_today`                     | Digunakan untuk filter waktu saat ini        | Menentukan zona waktu dan menyaring task berdasarkan hari ini.           |
