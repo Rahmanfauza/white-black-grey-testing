@@ -1,21 +1,21 @@
-# 🧩 Orthogonal Array Testing (OAT)
+🧩 Orthogonal Array Testing (OAT)
 
-## 📌 Deskripsi Singkat
+📌 Deskripsi Singkat
 
-**Orthogonal Array Testing (OAT)** adalah teknik pengujian Gray Box yang menggunakan pendekatan statistik untuk menghasilkan kombinasi uji yang efisien. Ini sangat berguna ketika jumlah input sangat banyak, karena dapat mengurangi jumlah test case tanpa mengurangi cakupan pengujian.
-
----
-
-## 🛠 Aplikasi yang Diuji
-
-- **Nama Aplikasi**: Task Manager Web App
-- **Teknologi**: Flask, SQLite
-- **Fitur yang Diuji**: Form penambahan task (`/tasks/add`)
-- **Tujuan Pengujian**: Memverifikasi apakah sistem dapat menangani berbagai kombinasi input task dengan benar
+Orthogonal Array Testing (OAT) adalah teknik pengujian Gray Box yang menggunakan pendekatan statistik untuk menghasilkan kombinasi uji yang efisien. Ini sangat berguna ketika jumlah input sangat banyak, karena dapat mengurangi jumlah test case tanpa mengurangi cakupan pengujian.
 
 ---
 
-## 🔍 Faktor dan Level yang Digunakan
+🛠 Aplikasi yang Diuji
+
+- Nama Aplikasi: Task Manager Web App
+- Teknologi: Flask, SQLite
+- Fitur yang Diuji: Form penambahan task (`/tasks/add`)
+- Tujuan Pengujian: Memverifikasi apakah sistem dapat menangani berbagai kombinasi input task dengan benar
+
+---
+
+🔍 Faktor dan Level yang Digunakan
 
 | Faktor (Variabel)      | Level 1        | Level 2        | Level 3           |
 |------------------------|----------------|----------------|--------------------|
@@ -27,7 +27,7 @@
 
 ---
 
-## 🧪 Kombinasi Pengujian (Tabel OAT)
+ 🧪 Kombinasi Pengujian (Tabel OAT)
 
 Menggunakan array ortogonal L9(3^3), berikut adalah 9 test case yang dilakukan:
 
@@ -61,28 +61,19 @@ Menggunakan array ortogonal L9(3^3), berikut adalah 9 test case yang dilakukan:
 
 ---
 
-## 🧾 Catatan Pengujian
+🧾 Catatan Pengujian
 
-- Semua pengujian dilakukan dalam keadaan **user sudah login**.
+- Semua pengujian dilakukan dalam keadaan user sudah login.
 - Panjang teks yang digunakan untuk kasus "Panjang" adalah > 255 karakter.
 - Hasil yang valid disimpan di dashboard dan muncul sesuai urutan waktu (`created_at`).
 
 ---
 
-## 🧠 Insight & Kesimpulan
+🧠 Insight & Kesimpulan
 
 - OAT membantu meminimalkan jumlah test case, dari potensi 27 kombinasi menjadi hanya 9, **tanpa kehilangan cakupan penting**.
 - Validasi form berjalan baik untuk kasus batas seperti input kosong atau sangat panjang.
 - Performa sistem tetap stabil dengan data panjang.
-
----
-
-## 👩‍💻 Rekomendasi Tambahan
-
-- Terapkan batas karakter maksimum di sisi klien & server untuk `title` dan `description`.
-- Tambahkan feedback langsung saat form error (contoh: "judul tidak boleh kosong").
-
----
 
 
 
