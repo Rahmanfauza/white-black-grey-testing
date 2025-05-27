@@ -37,11 +37,6 @@
 - Add Task
 
 ---
-
-# 📋 Decision Table Testing – Aplikasi Manajemen Tugas (Flask)
-
----
-
 ## ✅ Fitur 1: Register
 
 ### Aturan
@@ -51,7 +46,7 @@
 
 ### 🧪 Tabel Keputusan
 
-| TC  | Username Valid | Email Valid | Password Valid | Unik (Username & Email) | Expected Result               | Actual Result (Jika Gagal)                       |
+| TC  | Username Valid | Email Valid | Password Valid | Unik (Username & Email) | Expected Result               | Actual Result                       |
 |-----|----------------|-------------|----------------|--------------------------|-------------------------------|--------------------------------------------------|
 | TC1 | ✔️              | ✔️           | ✔️              | ✔️                        | ✅ Registrasi berhasil         | ❌ Tidak ada                                       |
 | TC2 | ✔️              | ✔️           | ✔️              | ❌                        | ❌ Username/email duplikat    | ✅ Registrasi ditolak dengan pesan kesalahan     |
@@ -70,7 +65,7 @@
 
 ### 🧪 Tabel Keputusan
 
-| TC  | Username Kosong | Password Kosong | Username Terdaftar | Password Cocok | Expected Result        | Actual Result (Jika Gagal)                   |
+| TC  | Username Kosong | Password Kosong | Username Terdaftar | Password Cocok | Expected Result        | Actual Result                 |
 |-----|------------------|------------------|---------------------|----------------|-------------------------|------------------------------------------------|
 | TC1 | ❌               | ❌               | ✔️                  | ✔️              | ✅ Login berhasil       | ❌ Tidak ada                                    |
 | TC2 | ✔️               | ❌               | -                   | -              | ❌ Username kosong      | ✅ Login gagal dengan pesan error              |
@@ -89,7 +84,7 @@
 
 ### 🧪 Tabel Keputusan
 
-| TC  | Login (Session Ada) | Title Kosong | Description Kosong | Expected Result               | Actual Result (Jika Gagal)                  |
+| TC  | Login (Session Ada) | Title Kosong | Description Kosong | Expected Result               | Actual Result                |
 |-----|----------------------|---------------|---------------------|-------------------------------|----------------------------------------------|
 | TC1 | ✔️                   | ❌            | ❌                  | ✅ Task ditambahkan           | ❌ Tidak ada                                   |
 | TC2 | ✔️                   | ✔️            | ❌                  | ❌ Gagal – Title kosong        | ✅ Task tidak disimpan, flash error muncul     |
@@ -97,9 +92,3 @@
 | TC4 | ✔️                   | ❌            | ✔️                  | ✅ Task ditambahkan           | ❌ Tidak ada                                   |
 
 ---
-
-## 📌 Catatan
-- Kolom **"Actual Result (Jika Gagal)"** membantu memverifikasi bahwa sistem menangani input tidak valid sesuai ekspektasi.
-- Cocok untuk pengujian manual dan dokumentasi QA formal.
-
-📁 Diperuntukkan bagi pengujian logika aplikasi manajemen tugas berbasis Flask (Python).
