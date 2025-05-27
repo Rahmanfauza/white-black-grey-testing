@@ -32,7 +32,7 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 | Judul kosong | `""` | Tidak boleh disimpan |
 | Judul aneh | `"@@@###"` | Ditolak atau disimpan tanpa error |
 | Deskripsi panjang | 10.000 karakter | Tetap tersimpan, tidak crash |
-| Tahun tidak valid (di register) | `"abc"` | Validasi muncul |
+
 
 📸 `screenshots/boundary_case.png`
 
