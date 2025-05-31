@@ -74,14 +74,7 @@ Berdasarkan hasil aktual dari script `run_oat_tests.py`, semua kombinasi menghas
 
 📸 Bukti Pengujian
 
-1. **Login ke Dashboard**
-   ![Dashboard Awal](./screenshots/1-dashboard-login.png)
 
-2. **Hasil Eksekusi `run_oat_tests.py`**
-   ![Hasil Test](./screenshots/2-run-oat-test.png)
-
-3. **Daftar Task Setelah Pengujian**
-   ![Task Baru](./screenshots/3-dashboard-after-tests.png)
 
 ---
 
