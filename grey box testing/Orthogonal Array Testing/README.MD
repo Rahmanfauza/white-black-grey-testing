@@ -47,7 +47,6 @@ Berdasarkan hasil aktual dari script `run_oat_tests.py`, semua kombinasi menghas
 - Validasi sistem saat ini mungkin terlalu ketat
 - Atau endpoint `POST /tasks/add` tidak menerima request dari automated testing
 
-Rekomendasi: lakukan review pada implementasi validasi server-side dan metode pengujian otomatis agar ekspektasi dapat terpenuhi.
 
 
 ---
