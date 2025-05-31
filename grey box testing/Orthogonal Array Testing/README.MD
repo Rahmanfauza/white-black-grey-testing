@@ -41,6 +41,15 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 | TC8       | Panjang | Normal      | pending     | Valid                            |
 | TC9       | Panjang | Panjang     | selesai     | Valid                            |
 
+
+❗️Catatan:
+Berdasarkan hasil aktual dari script `run_oat_tests.py`, semua kombinasi menghasilkan hasil `invalid`. Hal ini menunjukkan bahwa:
+- Validasi sistem saat ini mungkin terlalu ketat
+- Atau endpoint `POST /tasks/add` tidak menerima request dari automated testing
+
+Rekomendasi: lakukan review pada implementasi validasi server-side dan metode pengujian otomatis agar ekspektasi dapat terpenuhi.
+
+
 ---
 
 💡 Logika Validasi Sistem
