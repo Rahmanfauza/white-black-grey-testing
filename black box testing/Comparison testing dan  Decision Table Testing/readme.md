@@ -1,7 +1,5 @@
 # Laporan Pengujian: Comparison Testing & Decision Table Testing
 
-Berikut adalah format ulang dari hasil pengujian Comparison Testing dan Decision Table Testing yang Anda berikan, dirapikan agar lebih terstruktur dan konsisten, termasuk penambahan kolom Screenshot dan standarisasi ID kasus uji.
-
 ## 1. Comparison Testing
 
 Comparison Testing, sering juga disebut Back-to-Back Testing atau Comparative Testing, adalah jenis pengujian perangkat lunak di mana output atau perilaku dari aplikasi yang sedang diuji (AUT - Application Under Test) dibandingkan dengan output atau perilaku dari aplikasi referensi atau versi sebelumnya dari aplikasi yang sama.
