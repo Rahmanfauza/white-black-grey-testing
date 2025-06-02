@@ -10,7 +10,7 @@ Endurance Testing adalah teknik pengujian non-fungsional untuk memeriksa bagaima
 
 
 ## Cause Effect Testing 
-
+Cause-Effect Relationship Testing (atau sering disebut juga Cause-Effect Graphing) adalah salah satu metode dalam pengujian perangkat lunak (software testing) yang digunakan untuk mengidentifikasi dan memverifikasi hubungan sebab-akibat (cause-effect) antara berbagai kondisi input (sebab) dan output atau hasil yang diharapkan (akibat) pada suatu sistem.
 
 | Cause (Input/Kondisi)                                       | Effect (Output/Respons yang Diharapkan)                             | Status (Pass/Fail) |
 |-------------------------------------------------------------|---------------------------------------------------------------------|--------------------|
