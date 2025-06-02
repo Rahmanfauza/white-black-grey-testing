@@ -1,85 +1,120 @@
-# Black Box Testing Scenarios: Task Manager Application
+# Rangkuman Skenario Pengujian Black Box (Update)
 
-Berikut adalah rancangan skenario pengujian black-box menggunakan teknik Boundary Value Analysis (BVA) dan Equivalence Partitioning (EP) untuk aplikasi Task Manager. Pengujian aktual tidak dapat dilakukan karena kendala teknis akses aplikasi.
+Boundary Value Analysis adalah teknik desain test case black-box yang melengkapi Equivalence Partitioning. Teknik ini fokus pada pengujian nilai-nilai yang berada di "batas" atau "tepi" dari partisi ekuivalen.
 
-**Catatan:** Asumsi batas panjang karakter (Min/Max) dibuat berdasarkan praktik umum dan mungkin perlu disesuaikan jika ada spesifikasi yang berbeda dari aplikasi.
+## 1. Boundary Value Analysis (BVA)
 
-## Boundary Value Analysis (BVA)
+Pengujian BVA fokus pada nilai-nilai di batas valid dan invalid dari suatu input.
 
-Tabel ini merinci kasus uji BVA untuk memvalidasi input pada nilai batasnya.
+### 1.1. Definisi Parameter dan Batas (BVA)
 
-| Fitur         | Input Field   | Test Case ID          | Deskripsi Pengujian                   | Tipe      | Ekspektasi Hasil (Umum) |
-|---------------|---------------|-----------------------|---------------------------------------|-----------|-------------------------|
-| **Registrasi**| Username      | TC-BVA-REG-USR-01     | Input 2 karakter                      | Invalid   | Gagal (Below Min)       |
-|               | Username      | TC-BVA-REG-USR-02     | Input 3 karakter                      | Valid     | Berhasil (Min)          |
-|               | Username      | TC-BVA-REG-USR-03     | Input 4 karakter                      | Valid     | Berhasil (Min+1)        |
-|               | Username      | TC-BVA-REG-USR-04     | Input 19 karakter                     | Valid     | Berhasil (Max-1)        |
-|               | Username      | TC-BVA-REG-USR-05     | Input 20 karakter                     | Valid     | Berhasil (Max)          |
-|               | Username      | TC-BVA-REG-USR-06     | Input 21 karakter                     | Invalid   | Gagal (Above Max)       |
-|               | Password      | TC-BVA-REG-PWD-01     | Input 5 karakter                      | Invalid   | Gagal (Below Min)       |
-|               | Password      | TC-BVA-REG-PWD-02     | Input 6 karakter                      | Valid     | Berhasil (Min)          |
-|               | Password      | TC-BVA-REG-PWD-03     | Input 7 karakter                      | Valid     | Berhasil (Min+1)        |
-|               | Password      | TC-BVA-REG-PWD-04     | Input 29 karakter                     | Valid     | Berhasil (Max-1)        |
-|               | Password      | TC-BVA-REG-PWD-05     | Input 30 karakter                     | Valid     | Berhasil (Max)          |
-|               | Password      | TC-BVA-REG-PWD-06     | Input 31 karakter                     | Invalid   | Gagal (Above Max)       |
-| **Login**     | Username      | TC-BVA-LOG-USR-01     | Input 2 karakter                      | Invalid   | Gagal (Below Min)       |
-|               | Username      | TC-BVA-LOG-USR-02     | Input 3 karakter                      | Valid     | Berhasil/Gagal (Min)*   |
-|               | Username      | TC-BVA-LOG-USR-03     | Input 20 karakter                     | Valid     | Berhasil/Gagal (Max)*   |
-|               | Username      | TC-BVA-LOG-USR-04     | Input 21 karakter                     | Invalid   | Gagal (Above Max)       |
-|               | Password      | TC-BVA-LOG-PWD-01     | Input 5 karakter                      | Invalid   | Gagal (Below Min)       |
-|               | Password      | TC-BVA-LOG-PWD-02     | Input 6 karakter                      | Valid     | Berhasil/Gagal (Min)*   |
-|               | Password      | TC-BVA-LOG-PWD-03     | Input 30 karakter                     | Valid     | Berhasil/Gagal (Max)*   |
-|               | Password      | TC-BVA-LOG-PWD-04     | Input 31 karakter                     | Invalid   | Gagal (Above Max)       |
-| **Tambah Tugas**| Title         | TC-BVA-TSK-TTL-01     | Input 0 karakter (Kosong)             | Invalid   | Gagal (Below Min/Empty) |
-|               | Title         | TC-BVA-TSK-TTL-02     | Input 1 karakter                      | Valid     | Berhasil (Min)          |
-|               | Title         | TC-BVA-TSK-TTL-03     | Input 2 karakter                      | Valid     | Berhasil (Min+1)        |
-|               | Title         | TC-BVA-TSK-TTL-04     | Input 99 karakter                     | Valid     | Berhasil (Max-1)        |
-|               | Title         | TC-BVA-TSK-TTL-05     | Input 100 karakter                    | Valid     | Berhasil (Max)          |
-|               | Title         | TC-BVA-TSK-TTL-06     | Input 101 karakter                    | Invalid   | Gagal (Above Max)       |
-|               | Description   | TC-BVA-TSK-DSC-01     | Input 0 karakter (Kosong)             | Valid     | Berhasil (Empty/Min)    |
-|               | Description   | TC-BVA-TSK-DSC-02     | Input 1 karakter                      | Valid     | Berhasil (Min+1)        |
-|               | Description   | TC-BVA-TSK-DSC-03     | Input 499 karakter                    | Valid     | Berhasil (Max-1)        |
-|               | Description   | TC-BVA-TSK-DSC-04     | Input 500 karakter                    | Valid     | Berhasil (Max)          |
-|               | Description   | TC-BVA-TSK-DSC-05     | Input 501 karakter                    | Invalid   | Gagal (Above Max)       |
+| Fitur         | Parameter    | Tipe Data | Batas Valid (Asumsi) | Batas Invalid (Asumsi)      |
+|---------------|--------------|-----------|----------------------|-----------------------------|
+| Registrasi    | Username     | String    | 1–12 karakter        | Kosong / >12 karakter       |
+| Registrasi    | Password     | String    | 1–12 karakter        | Kosong / >12 karakter       |
+| Login         | Username     | String    | 1–12 karakter        | Kosong / >12 karakter       |
+| Login         | Password     | String    | 1–12 karakter        | Kosong / >12 karakter       |
+| Tambah Tugas  | Title        | String    | 1–12 karakter        | Kosong / >12 karakter       |
+| Tambah Tugas  | Description  | String    | 0–12 karakter*       | >12 karakter                |
 
-_* Catatan Login: Hasil valid/gagal juga tergantung pada apakah username/password cocok dengan data yang ada di database._
+_* Catatan: Description pada BVA di file asli memiliki batas bawah 0 (kosong) yang dianggap valid, dan batas atas 12._
 
-## Equivalence Partitioning (EP)
+### 1.2. Kasus Uji BVA
 
-Tabel ini merinci kasus uji EP untuk memvalidasi input berdasarkan partisi kelas ekuivalensi (valid dan invalid).
+**Fitur: Registrasi**
 
-| Fitur         | Input Field   | Test Case ID          | Partisi / Deskripsi Pengujian             | Contoh Input                               | Tipe      | Ekspektasi Hasil (Umum) |
-|---------------|---------------|-----------------------|-------------------------------------------|--------------------------------------------|-----------|-------------------------|
-| **Registrasi**| Username      | TC-EP-REG-USR-01      | Valid Alphanumeric [3-20]                 | "testuser1"                                | Valid     | Berhasil                |
-|               | Username      | TC-EP-REG-USR-02      | Invalid - Empty                           | ""                                         | Invalid   | Gagal                   |
-|               | Username      | TC-EP-REG-USR-03      | Invalid - Too Short [<3]                  | "us"                                       | Invalid   | Gagal                   |
-|               | Username      | TC-EP-REG-USR-04      | Invalid - Too Long [>20]                  | "averylongusernamemorethan20chars"         | Invalid   | Gagal                   |
-|               | Username      | TC-EP-REG-USR-05      | Invalid - Special Chars (jika dilarang)   | "user@#$"                                  | Invalid   | Gagal                   |
-|               | Username      | TC-EP-REG-USR-06      | Invalid - Existing                        | Username yang sudah terdaftar              | Invalid   | Gagal                   |
-|               | Email         | TC-EP-REG-EML-01      | Valid Format                              | "test@example.com"                         | Valid     | Berhasil                |
-|               | Email         | TC-EP-REG-EML-02      | Invalid - Missing '@'                     | "testexample.com"                          | Invalid   | Gagal                   |
-|               | Email         | TC-EP-REG-EML-03      | Invalid - Missing '.' (domain part)       | "test@examplecom"                          | Invalid   | Gagal                   |
-|               | Email         | TC-EP-REG-EML-04      | Invalid - Empty                           | ""                                         | Invalid   | Gagal                   |
-|               | Email         | TC-EP-REG-EML-05      | Invalid - Existing                        | Email yang sudah terdaftar                 | Invalid   | Gagal                   |
-|               | Password      | TC-EP-REG-PWD-01      | Valid [6-30]                              | "password123"                              | Valid     | Berhasil                |
-|               | Password      | TC-EP-REG-PWD-02      | Invalid - Too Short [<6]                  | "pass"                                     | Invalid   | Gagal                   |
-|               | Password      | TC-EP-REG-PWD-03      | Invalid - Too Long [>30]                  | "averylongpasswordmorethan30chars12345"    | Invalid   | Gagal                   |
-| **Login**     | Username      | TC-EP-LOG-USR-01      | Valid - Existing                          | Username valid terdaftar                   | Valid     | Berhasil                |
-|               | Username      | TC-EP-LOG-USR-02      | Invalid - Non-Existing                    | Username tidak terdaftar                   | Invalid   | Gagal                   |
-|               | Username      | TC-EP-LOG-USR-03      | Invalid - Format/Length                   | "u"                                        | Invalid   | Gagal                   |
-|               | Username      | TC-EP-LOG-USR-04      | Invalid - Empty                           | ""                                         | Invalid   | Gagal                   |
-|               | Password      | TC-EP-LOG-PWD-01      | Valid - Correct                           | Password benar untuk username valid        | Valid     | Berhasil                |
-|               | Password      | TC-EP-LOG-PWD-02      | Invalid - Incorrect                       | Password salah untuk username valid        | Invalid   | Gagal                   |
-|               | Password      | TC-EP-LOG-PWD-03      | Invalid - Format/Length                   | "pwd"                                      | Invalid   | Gagal                   |
-|               | Password      | TC-EP-LOG-PWD-04      | Invalid - Empty                           | ""                                         | Invalid   | Gagal                   |
-| **Tambah Tugas**| Title         | TC-EP-TSK-TTL-01      | Valid [1-100]                             | "Selesaikan Laporan Bulanan"               | Valid     | Berhasil                |
-|               | Title         | TC-EP-TSK-TTL-02      | Invalid - Empty                           | ""                                         | Invalid   | Gagal                   |
-|               | Title         | TC-EP-TSK-TTL-03      | Invalid - Too Long [>100]                 | String > 100 karakter                      | Invalid   | Gagal                   |
-|               | Description   | TC-EP-TSK-DSC-01      | Valid [0-500]                             | "Detail laporan mencakup..."               | Valid     | Berhasil                |
-|               | Description   | TC-EP-TSK-DSC-02      | Valid - Empty                             | ""                                         | Valid     | Berhasil                |
-|               | Description   | TC-EP-TSK-DSC-03      | Invalid - Too Long [>500]                 | String > 500 karakter                      | Invalid   | Gagal                   |
-| **Update Status**| Status        | TC-EP-TSK-STS-01      | Valid - 'pending'                         | Pilih 'pending'                            | Valid     | Berhasil                |
-|               | Status        | TC-EP-TSK-STS-02      | Valid - 'completed'                       | Pilih 'completed'                          | Valid     | Berhasil                |
-|               | Status        | TC-EP-TSK-STS-03      | Valid - 'in progress' (jika ada)          | Pilih 'in progress'                        | Valid     | Berhasil                |
-|               | Status        | TC-EP-TSK-STS-04      | Invalid - Nilai Lainnya                   | Input/Pilih nilai selain yang valid        | Invalid   | Gagal                   |
+| ID             | Parameter | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot | Catatan |
+|----------------|-----------|------------------|----------------|-----------------|---------------|-------------|------------|---------|
+| TC-REG-BVA-001 | Username  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
+| TC-REG-BVA-002 | Username  | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min     |
+| TC-REG-BVA-003 | Username  | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
+| TC-REG-BVA-004 | Username  | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
+| TC-REG-BVA-005 | Password  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
+| TC-REG-BVA-006 | Password  | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min     |
+| TC-REG-BVA-007 | Password  | "aa"             | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min+1   |
+| TC-REG-BVA-008 | Password  | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
+| TC-REG-BVA-009 | Password  | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
+
+**Fitur: Login**
+
+| ID             | Parameter | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot | Catatan |
+|----------------|-----------|------------------|----------------|-----------------|---------------|-------------|------------|---------|
+| TC-LOG-BVA-001 | Username  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
+| TC-LOG-BVA-002 | Username  | "a"              | Batas Valid    | Tergantung auth | Sukses        | ✔           |            | Min     |
+| TC-LOG-BVA-003 | Password  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
+| TC-LOG-BVA-004 | Password  | "a"              | Batas Valid    | Tergantung auth | Sukses        | ✔           |            | Min     |
+
+**Fitur: Tambah Tugas (Add Task)**
+
+| ID             | Parameter    | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot | Catatan |
+|----------------|--------------|------------------|----------------|-----------------|---------------|-------------|------------|---------|
+| TC-ADD-BVA-001 | Title        | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
+| TC-ADD-BVA-002 | Title        | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min     |
+| TC-ADD-BVA-003 | Title        | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
+| TC-ADD-BVA-004 | Title        | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
+| TC-ADD-BVA-005 | Description  | "" (kosong)      | Batas Valid*   | Sukses          | Sukses        | ✔           |            | Min (Opsional) |
+| TC-ADD-BVA-006 | Description  | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min+1   |
+| TC-ADD-BVA-007 | Description  | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
+| TC-ADD-BVA-008 | Description  | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
+
+## 2. Equivalence Partitioning (EP)
+
+Equivalence Partitioning (juga dikenal sebagai Equivalence Class Partitioning) adalah teknik desain test case black-box yang bertujuan untuk mengurangi jumlah total test case yang perlu dijalankan sambil tetap memastikan cakupan pengujian yang memadai. Teknik ini bekerja dengan membagi data input suatu komponen perangkat lunak menjadi beberapa partisi atau kelas ekuivalen.
+
+### 2.1. Fitur Registrasi
+
+**Partisi Input:**
+
+| Input     | Partisi Valid               | Partisi Invalid                 |
+|-----------|-----------------------------|----------------------------------|
+| Username  | String unik (≥1 karakter)   | Kosong / Sudah ada di database   |
+| Email     | Format valid & unik         | Format invalid / Sudah terdaftar |
+| Password  | String (≥1 karakter)        | Kosong                           |
+
+**Kasus Uji EP:**
+
+| ID            | Deskripsi Input                         | Contoh Input                            | Partisi | Expected Result          | Screenshot | Catatan            |
+|---------------|-----------------------------------------|-----------------------------------------|---------|--------------------------|------------|--------------------|
+| TC-REG-EP-001 | Semua input valid                       | `("admin", "rahman@mail.com", "123")` | Valid   | Registrasi sukses        |            |                    |
+| TC-REG-EP-002 | Username kosong                         | `("", "rahman@mail.com", "123")`      | Invalid | Error: "Username kosong" |            |                    |
+| TC-REG-EP-003 | Format email salah                      | `("admin", "rahmanemail", "123")`       | Invalid | Error: "Email invalid"   |            |                    |
+| TC-REG-EP-004 | Password kosong                         | `("admin", "rahman@mail.com", "")`      | Invalid | Error: "Password kosong" |            |                    |
+| TC-REG-EP-005 | Username sudah ada (asumsi "admin" ada) | `("admin", "baru@mail.com", "456")`   | Invalid | Error: "Username exists" |            | Perlu data existing |
+| TC-REG-EP-006 | Email sudah ada (asumsi email ada)      | `("userbaru", "rahman@mail.com", "456")`| Invalid | Error: "Email exists"    |            | Perlu data existing |
+
+### 2.2. Fitur Login
+
+**Partisi Input:**
+
+| Input     | Partisi Valid               | Partisi Invalid                 |
+|-----------|-----------------------------|----------------------------------|
+| Username  | Terdaftar di database       | Tidak terdaftar / Kosong         |
+| Password  | Sesuai dengan database      | Salah / Kosong                   |
+
+**Kasus Uji EP:**
+
+| ID            | Deskripsi Input         | Contoh Input        | Partisi | Expected Result          | Screenshot | Catatan            |
+|---------------|-------------------------|---------------------|---------|--------------------------|------------|--------------------|
+| TC-LOG-EP-001 | Kredensial valid        | `("admin", "123")`  | Valid   | Login sukses             |            |                    |
+| TC-LOG-EP-002 | Username kosong         | `("", "123")`       | Invalid | Error: "Username kosong" |            |                    |
+| TC-LOG-EP-003 | Password kosong         | `("admin", "")`       | Invalid | Error: "Password kosong" |            |                    |
+| TC-LOG-EP-004 | Password salah          | `("admin", "321")`  | Invalid | Error: "Password salah"  |            |                    |
+| TC-LOG-EP-005 | Username tidak terdaftar| `("userX", "123")`  | Invalid | Error: "User not found"|            |                    |
+
+### 2.3. Fitur Tambah Tugas (Add Task)
+
+**Partisi Input:**
+
+| Input        | Partisi Valid          | Partisi Invalid       |
+|--------------|------------------------|-----------------------|
+| Title        | String (≥1 karakter)   | Kosong                |
+| Description  | String (boleh kosong)  | -                     |
+
+**Kasus Uji EP:**
+
+| ID            | Deskripsi Input         | Contoh Input                   | Partisi | Expected Result            | Screenshot | Catatan                  |
+|---------------|-------------------------|--------------------------------|---------|----------------------------|------------|--------------------------|
+| TC-ADD-EP-001 | Semua input valid       | `("Task valid", "Deskripsi")`  | Valid   | Task berhasil ditambahkan  |            |                          |
+| TC-ADD-EP-002 | Title kosong            | `("", "Deskripsi")`            | Invalid | Error: "Title kosong"      |            |                          |
+| TC-ADD-EP-003 | Description kosong      | `("Task", "")`                 | Valid   | Task berhasil ditambahkan  |            | Description boleh kosong |
 
