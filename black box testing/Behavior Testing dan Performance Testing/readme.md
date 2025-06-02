@@ -9,4 +9,5 @@
 | 5   | Tambah Task                  | Isi form task dan submit     | Task muncul di dashboard, flash msg "Task berhasil ditambahkan" | ![Tambah Task](screenshot/tambah_task.png)                     | ✅ / ❌  |
 | 6   | Akses Dashboard tanpa Login  | Buka /dashboard tanpa login  | Dialihkan ke halaman login                                      | ![Akses Tanpa Login](screenshot/akses_tanpa_login.png)         | ✅ / ❌  |
 
+## 2. Performance Testing
 
