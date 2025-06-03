@@ -15,9 +15,6 @@
 ## Fungsi `delete_task()`
 [Lihat disini](delete_task.md)
 
-## Fungsi `edit_task()`
-[Lihat disini](edit_task.md)
-
 ## Fungsi `update_task()`
 [Lihat disini](update_task.md)
 
