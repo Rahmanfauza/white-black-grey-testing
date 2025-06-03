@@ -65,6 +65,7 @@ for (let i = 1; i <= 100; i++) {
 }
 ```
 📸 `screenshots/2.%20Menguji%20Batasan/1.png`
+---
 
 🔁untuk melakuan Hapus Berulang (Stress Test)
 
