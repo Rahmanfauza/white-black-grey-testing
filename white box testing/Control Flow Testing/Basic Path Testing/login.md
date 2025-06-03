@@ -1,4 +1,4 @@
-## 1. Fungsi login()
+## Fungsi login()
 
 ```python
 @app.route('/login', methods=['GET', 'POST'])
