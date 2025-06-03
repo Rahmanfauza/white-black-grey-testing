@@ -97,13 +97,14 @@ Equivalence Partitioning (juga dikenal sebagai Equivalence Class Partitioning) a
 
 **Kasus Uji EP:**
 
-| ID            | Deskripsi Input         | Contoh Input        | Partisi | Expected Result          | Screenshot | Catatan            |
-|---------------|-------------------------|---------------------|---------|--------------------------|------------|--------------------|
-| TC-LOG-EP-001 | Kredensial valid        | `("admin", "123")`  | Valid   | Login sukses             | ![Image](https://github.com/user-attachments/assets/3a15c5fc-63ed-49fe-bd2b-e41c629bc1a3)           |                    |
-| TC-LOG-EP-002 | Username kosong         | `("", "123")`       | Invalid | Error: "Username kosong" |            |                    |
-| TC-LOG-EP-003 | Password kosong         | `("admin", "")`       | Invalid | Error: "Password kosong" |            |                    |
-| TC-LOG-EP-004 | Password salah          | `("admin", "321")`  | Invalid | Error: "Password salah"  |            |                    |
-| TC-LOG-EP-005 | Username tidak terdaftar| `("userX", "123")`  | Invalid | Error: "User not found"|            |                    |
+| ID            | Deskripsi Input          | Contoh Input         | Partisi | Expected Result            | Screenshot                                                                                          | Catatan |
+|---------------|---------------------------|------------------------|---------|-----------------------------|------------------------------------------------------------------------------------------------------|---------|
+| TC-LOG-EP-001 | Kredensial valid          | `("admin", "123")`     | Valid   | Login sukses                | <img src="https://github.com/user-attachments/assets/3a15c5fc-63ed-49fe-bd2b-e41c629bc1a3" width="250"/> |         |
+| TC-LOG-EP-002 | Username kosong           | `("", "123")`          | Invalid | Error: "Username kosong"    | <img src="https://github.com/user-attachments/assets/10fbde19-e81e-4c6b-bf1f-7b0d22b040fa" width="250"/> |         |
+| TC-LOG-EP-003 | Password kosong           | `("admin", "")`        | Invalid | Error: "Password kosong"    | <img src="https://github.com/user-attachments/assets/16092a45-57d2-4809-9380-c1cf964ce623" width="250"/> |         |
+| TC-LOG-EP-004 | Password salah            | `("admin", "321")`     | Invalid | Error: "Password salah"     | <img src="https://github.com/user-attachments/assets/d2f1ed29-12b2-4030-af00-ed096b147151" width="250"/> |         |
+| TC-LOG-EP-005 | Username tidak terdaftar | `("userX", "123")`     | Invalid | Error: "User not found"     | <img src="https://github.com/user-attachments/assets/d2f1ed29-12b2-4030-af00-ed096b147151" width="250"/> |         |
+
 
 ### 2.3. Fitur Tambah Tugas (Add Task)
 
@@ -116,9 +117,10 @@ Equivalence Partitioning (juga dikenal sebagai Equivalence Class Partitioning) a
 
 **Kasus Uji EP:**
 
-| ID            | Deskripsi Input         | Contoh Input                   | Partisi | Expected Result            | Screenshot | Catatan                  |
-|---------------|-------------------------|--------------------------------|---------|----------------------------|------------|--------------------------|
-| TC-ADD-EP-001 | Semua input valid       | `("Task valid", "Deskripsi")`  | Valid   | Task berhasil ditambahkan  |            |                          |
-| TC-ADD-EP-002 | Title kosong            | `("", "Deskripsi")`            | Invalid | Error: "Title kosong"      |            |                          |
-| TC-ADD-EP-003 | Description kosong      | `("Task", "")`                 | Valid   | Task berhasil ditambahkan  |            | Description boleh kosong |
+| ID            | Deskripsi Input         | Contoh Input                   | Partisi | Expected Result            | Screenshot                                                                                           | Catatan                  |
+|---------------|-------------------------|--------------------------------|---------|----------------------------|--------------------------------------------------------------------------------------------------------|--------------------------|
+| TC-ADD-EP-001 | Semua input valid       | `("Task valid", "Deskripsi")`  | Valid   | Task berhasil ditambahkan  | <img src="https://github.com/user-attachments/assets/edd954f3-9613-442c-8c3d-270c0449b6f1" width="250"/> |                          |
+| TC-ADD-EP-002 | Title kosong            | `("", "Deskripsi")`            | Invalid | Error: "Title kosong"       | <img src="https://github.com/user-attachments/assets/6d026bd6-60c2-4116-bcca-3b90c52b1148" width="250"/> |                          |
+| TC-ADD-EP-003 | Description kosong      | `("Task", "")`                 | Valid   | Task berhasil ditambahkan  | <img src="https://github.com/user-attachments/assets/95a065db-e1b7-4d25-898a-9c35ab0a6326" width="250"/> | Description boleh kosong |
+
 
