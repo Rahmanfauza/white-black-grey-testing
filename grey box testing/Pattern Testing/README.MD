@@ -41,7 +41,6 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 📸 `screenshots/2.%20Menguji%20Batasan/1.png`
 
 ---
-
 3. ⚙️ Menguji Performa & Stabilitas
 
 | Uji | Langkah | Hasil Diharapkan |
@@ -64,6 +63,8 @@ for (let i = 1; i <= 100; i++) {
     body: `title=Task+${i}&description=Deskripsi+${i}`
   });
 }
+
+📸 `screenshots/2.%20Menguji%20Batasan/1.png`
 
 
 ---
