@@ -1,98 +1,122 @@
-# 🧪 Test Case – Regression Testing
+🧪 Regression Testing – Task Manager App
 
-Berikut ini adalah skenario pengujian fitur-fitur utama aplikasi setelah penambahan sistem waktu:
+Dokumen ini berisi skenario pengujian untuk memastikan bahwa perubahan pada sistem `created_at` tidak merusak fitur-fitur utama dalam aplikasi Task Manager.
 
 ---
 
-## ✅ Login
+✅ Test Case 1: Login
 
 **Langkah Pengujian:**
 1. Buka halaman `/login`
-2. Masukkan username dan password yang valid
+2. Masukkan username dan password valid
 
 **Hasil yang Diharapkan:**
-- Berpindah ke `/dashboard`
-- Muncul flash message: `"Login berhasil!"`
+- ✅ Berpindah ke halaman `/dashboard`
+- ✅ Muncul flash message: `Login berhasil!`
+
+**Status:** [✅]  
+**Catatan:** sesuai dengan yang diharapkan, hanyasaja database terlalu lambat merekam input sesuai perkiraan
+
 
 ---
 
-## ✅ Register
+✅ Test Case 2: Register
 
 **Langkah Pengujian:**
 1. Buka halaman `/register`
-2. Masukkan username, email, dan password baru
+2. Isi form: username, email, password
 
 **Hasil yang Diharapkan:**
-- Redirect ke `/login`
-- Muncul pesan: `"Registrasi berhasil"`
+- ✅ Redirect ke `/login`
+- ✅ Flash message: `Registrasi berhasil`
+
+**Status:** [✅]  
+**Catatan:** sesuai
 
 ---
 
-## ✅ Tambah Tugas
+✅ Test Case 3: Tambah Tugas
 
 **Langkah Pengujian:**
-1. Login
-2. Isi form tambah tugas di `/dashboard`
+1. Login terlebih dahulu
+2. Di dashboard, isi form tambah tugas
 
 **Data yang Diperiksa:**
-- Data tersimpan di database
-- Kolom `created_at` menyimpan waktu dalam format ISO
-- Format waktu di UI: `27-05-2025 10:30`
+- ✅ Data masuk ke database
+- ✅ Kolom `created_at` menyimpan waktu ISO (cek via SQLite)
+- ✅ Di UI, waktu diformat `dd-mm-yyyy hh:mm`
+
+**Status:** [✅]  
+**Catatan:** database lambat dalam input yang dimasukkan
 
 ---
 
-## ✅ Lihat Daftar Tugas
+✅ Test Case 4: Lihat Daftar Tugas
 
 **Langkah Pengujian:**
 1. Login
-2. Buka halaman `/dashboard`
+2. Buka `/dashboard`
 
 **Hasil yang Diharapkan:**
-- Semua tugas tampil
-- Urutan berdasarkan `created_at` dari terbaru ke lama
+- ✅ Tugas muncul
+- ✅ Tersortir dari waktu terbaru ke lama
+
+**Status:** [✅]  
+**Catatan:** sesuai
 
 ---
 
-## ✅ Lihat Detail Tugas
+✅ Test Case 5: Detail Tugas
 
 **Langkah Pengujian:**
-1. Klik salah satu tugas dari dashboard
+1. Klik salah satu tugas
 
 **Hasil yang Diharapkan:**
-- Informasi lengkap tugas tampil
-- Waktu tampil dengan format yang rapi
+- ✅ Semua info tampil (title, desc, status, waktu)
+- ✅ Format waktu rapi dan terbaca
+
+**Status:** [✅]  
+**Catatan:** sesuai
 
 ---
 
-## ✅ Update Status Tugas
+✅ Test Case 6: Update Status Tugas
 
 **Langkah Pengujian:**
-1. Buka detail tugas
-2. Ubah status (misal: *pending → selesai*)
+1. Masuk ke detail tugas
+2. Ubah status (*pending → selesai*)
 
 **Hasil yang Diharapkan:**
-- Status berubah di database
-- Muncul flash message konfirmasi
+- ✅ Status tersimpan di database
+- ✅ Muncul flash message konfirmasi
+
+**Status:** [✅]  
+**Catatan:** sesuai, hanya saja database tidak dapat di akses
+---
+
+✅ Test Case 7: Hapus Tugas
+
+**Langkah Pengujian:**
+1. Masuk ke detail tugas
+2. Klik tombol "hapus"
+
+**Hasil yang Diharapkan:**
+- ✅ Tugas dihapus dari database
+- ✅ Tidak muncul lagi di dashboard
+
+**Status:** [✅]  
+**Catatan:** sudah sesuai
 
 ---
 
-## ✅ Hapus Tugas
+#✅ Test Case 8: Logout
 
 **Langkah Pengujian:**
-1. Buka detail tugas
-2. Klik tombol hapus
+1. Klik tombol "Logout"
 
 **Hasil yang Diharapkan:**
-- Tugas terhapus dari database
-- Tidak muncul lagi di dashboard
+- ✅ Dialihkan ke halaman `/login`
+- ✅ Session dihapus
 
----
-
-## ✅ Logout
-
-**Langkah Pengujian:**
-1. Klik tombol logout
-
-**Hasil yang Diharapkan:**
-- Dialihkan ke halaman login
-- Session pengguna terhapus
+**Status:** [❌]  
+**Catatan:** nama user masih tertera ketika logout
