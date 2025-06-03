@@ -12,13 +12,13 @@ Endurance Testing adalah teknik pengujian non-fungsional untuk memeriksa bagaima
 ## Cause Effect Testing 
 Cause-Effect Relationship Testing (atau sering disebut juga Cause-Effect Graphing) adalah salah satu metode dalam pengujian perangkat lunak (software testing) yang digunakan untuk mengidentifikasi dan memverifikasi hubungan sebab-akibat (cause-effect) antara berbagai kondisi input (sebab) dan output atau hasil yang diharapkan (akibat) pada suatu sistem.
 
-| Cause (Input/Kondisi)                                       | Effect (Output/Respons yang Diharapkan)                             | Status (Pass/Fail) |
-|-------------------------------------------------------------|---------------------------------------------------------------------|--------------------|
-| Username benar, password benar                              | Login berhasil, redirect ke dashboard                               |                |
-| Username benar, password salah                              | Gagal login, muncul error "Username atau password salah"            |                |
-| Form registrasi kosong                                      | Gagal registrasi, muncul error validasi                             |                |
-| Task dibuat dengan title kosong                             | Gagal tambah task, muncul error validasi                            |                |
-| User menghapus task yang bukan miliknya                     | Tidak bisa menghapus, muncul error "Task tidak ditemukan"           |                |
-| User menambahkan task dengan deskripsi panjang (>1000 char) | Task disimpan (jika tidak ada batasan) atau muncul error (jika ada) |                |
-| User menambahkan task dengan special character (`<script>`) | Input disanitasi, tidak ada XSS                                     |                |
+| **Cause (Input/Kondisi)**                                   | **Effect (Output/Respons yang Diharapkan)**                         | **Status (Pass/Fail)** |
+|-------------------------------------------------------------|---------------------------------------------------------------------|-------------------------|
+| Username benar, password benar                              | Login berhasil, redirect ke dashboard                               | ![Pass](https://github.com/user-attachments/assets/098680d3-df6f-46c3-976b-6111ab65937d) |
+| Username benar, password salah                              | Gagal login, muncul error "Username atau password salah"            | <img src="https://github.com/user-attachments/assets/098680d3-df6f-46c3-976b-6111ab65937d" width="300"/> |
+| Form registrasi kosong                                      | Gagal registrasi, muncul error validasi                             |                         |
+| Task dibuat dengan title kosong                             | Gagal tambah task, muncul error validasi                            |                         |
+| User menghapus task yang bukan miliknya                     | Tidak bisa menghapus, muncul error "Task tidak ditemukan"           |                         |
+| User menambahkan task dengan deskripsi panjang (>1000 char) | Task disimpan (jika tidak ada batasan) atau muncul error (jika ada) |                         |
+| User menambahkan task dengan special character (`<script>`) | Input disanitasi, tidak ada XSS                                     |                         |
 
