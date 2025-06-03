@@ -1,31 +1,31 @@
-# 🧩 Pattern Testing (Exploratory Testing)
+🧩 Pattern Testing (Exploratory Testing)
 
 Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativitas, dan intuisi tester. Dalam pengujian ini, tester tidak hanya mengikuti skrip pengujian formal, tapi juga mencari celah-celah bug dari interaksi pengguna nyata secara **tidak terduga**.
 
-## 🎯 Tujuan Pengujian
+---
+
+🎯 Tujuan Pengujian
 
 - Mengidentifikasi bug yang tidak tertangkap oleh pengujian formal
-- Menguji aplikasi dari sisi **pengalaman pengguna**, **stabilitas**, dan **ketahanan terhadap input aneh**
+- Menguji aplikasi dari sisi **pengalaman pengguna (UX)**, **stabilitas sistem**, dan **ketahanan terhadap input aneh**
+- Menilai konsistensi antarmuka dan kenyamanan saat digunakan oleh pengguna akhir
 
 ---
 
-## 🧪 Tahapan & Skenario Pengujian
+🧪 Tahapan & Skenario Pengujian
 
-### 1. 🛠 Menguji Fungsional Dasar
+1. 🛠 Menguji Fungsional Dasar
 
 | Langkah | Deskripsi |
 |--------|-----------|
-| 1 | Buka aplikasi dan login sebagai user |
-| 2 | Tambah tugas baru (judul, deskripsi) |
-| 3 | Edit tugas yang sudah ada |
-| 4 | Hapus tugas |
-| 5 | Logout dan login kembali untuk cek persistensi data |
+| 1 | Login dengan username dan password yang valid |
+| 2 | Tambah tugas baru (judul & deskripsi) |
+| 3 | Lihat daftar tugas pada halaman dashboard dan all tasks |
+| 4 | Update status tugas (Pending → Completed/In Progress) |
+| 5 | Hapus salah satu tugas |
+| 6 | Logout, lalu login kembali untuk memastikan data tetap ada |
 
-[📸 Screenshot Pengujian Fungsional Dasar](grey%20box%20testing/Pattern%20Testing/screenshots/1.%20Menguji%20Fungsional%20Dasar/1.png)
-
-
-
-
+📸 [Screenshot Pengujian Fungsional Dasar](screenshots/1.%20Menguji%20Fungsional%20Dasar/1.png)
 
 ---
 
@@ -33,52 +33,59 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 
 | Skenario | Input | Ekspektasi |
 |----------|-------|------------|
-| Judul kosong | `""` | Tidak boleh disimpan |
-| Judul aneh | `"@@@###"` | Ditolak atau disimpan tanpa error |
-| Deskripsi panjang | 10.000 karakter | Tetap tersimpan, tidak crash |
+| Judul kosong | `""` | Validasi muncul: tidak bisa disimpan |
+| Judul aneh | `"@@@###🤯"` | Tidak error, tampil normal |
+| Deskripsi panjang | 10.000+ karakter | Tetap tersimpan atau ditolak dengan sopan |
+| Input script | `<script>alert(1)</script>` | Ditampilkan sebagai teks biasa, tidak dijalankan |
 
-
-📸 `screenshots/boundary_case.png`
+📸 `screenshots/2.%20Menguji%20Batasan/1.png`
 
 ---
 
-### 3. ⚙️ Menguji Performa & Stabilitas
+3. ⚙️ Menguji Performa & Stabilitas
 
 | Uji | Langkah | Hasil Diharapkan |
 |-----|--------|------------------|
-| Tambah 100+ tugas | Loop tambah data | Aplikasi tetap responsif |
-| Edit & hapus berulang | 50x | Tidak crash |
-| Akses bersamaan (multitab) | Login dari 2 tab | Tidak bentrok session |
+| Tambah banyak tugas | Tambah 100 tugas berturut-turut | Aplikasi tetap stabil, tidak crash |
+| Operasi berulang | Tambah, edit status, hapus tugas sebanyak 50 kali | Tidak ada error atau delay |
+| Akses multitab | Login di 2 tab browser | Tidak logout paksa, data konsisten |
 
-📸 `screenshots/performance_test.png`
+📸 `screenshots/3.%20Performa%20dan%20Stabilitas/1.png`
 
 ---
 
-### 4. 🎨 Menguji Kegunaan & UX
+4. 🎨 Menguji Kegunaan & UX
 
 | Uji | Pertanyaan |
 |-----|------------|
-| Antarmuka | Apakah mudah digunakan? |
-| Navigasi | Apakah tombol dan menu jelas? |
-| Feedback | Apakah error message muncul dengan tepat? |
+| Navigasi | Apakah menu Dashboard, Tasks, dan Settings mudah diakses dan tidak membingungkan? |
+| Feedback | Apakah pesan error muncul saat input salah? (contoh: login gagal) |
+| Komponen UI | Apakah tombol, icon, dan form responsif serta konsisten? |
+| Tampilan Umum | Apakah desain antarmuka bersih, modern, dan nyaman digunakan? |
 
-📸 `screenshots/usability_feedback.png`
-
----
-
-## ✅ Kesimpulan
-
-Pattern Testing berhasil menemukan beberapa celah:
-
-- Validasi input yang bisa ditingkatkan
-- Aplikasi tetap stabil dengan banyak data
-- UX cukup baik, tapi bisa lebih jelas untuk error handling
-- aplikasi task ini tidak bisa di edit judul dan deskripsi kecuali edit status
+📸 `screenshots/4.%20Kegunaan%20UX/1.png`
 
 ---
 
-## 💡 Rekomendasi Perbaikan
+✅ Kesimpulan
 
-- Tambahkan validasi karakter pada input
-- Limit jumlah karakter maksimal
-- Tambahkan pesan error eksplisit pada semua form
+Pattern Testing berhasil menemukan beberapa temuan penting:
+
+- ✅ Aplikasi stabil untuk berbagai kombinasi input
+- ✅ Tidak crash saat digunakan secara intensif atau dalam jumlah besar
+- ✅ Tampilan dan navigasi antarmuka cukup intuitif
+- ⚠️ Tidak tersedia fitur untuk mengedit **judul dan deskripsi** tugas, hanya status yang bisa diubah
+- ⚠️ Validasi form perlu ditingkatkan terutama untuk karakter input dan batasan panjang
+- ⚠️ Halaman awal untuk melihat kata sandi tidak bisa di klik
+
+---
+
+💡 Rekomendasi Perbaikan
+
+- Tambahkan validasi karakter dan batas panjang input (misal: max 255 karakter)
+- Tambahkan pesan error yang lebih informatif di semua form (judul kosong, input tidak valid)
+- Pertimbangkan menambahkan fitur edit judul dan deskripsi untuk fleksibilitas pengguna
+- Gunakan alert/feedback yang lebih kontras saat aksi berhasil/gagal
+
+
+
