@@ -43,13 +43,13 @@ Decision Table Testing adalah teknik desain test case black-box yang digunakan u
 *   Username dan email harus unik.
 *   (Format email tidak divalidasi secara ketat dalam kode asli).
 
-| ID            | Kondisi: Username Valid | Kondisi: Email Valid | Kondisi: Password Valid | Kondisi: Unik (User & Email) | Aksi: Expected Result         | Aksi: Actual Result (Observasi)         | Screenshot |
-|---------------|-------------------------|----------------------|-------------------------|------------------------------|-------------------------------|-----------------------------------------|------------|
-| TC-DEC-REG-001| True                    | True                 | True                    | True                         | Registrasi berhasil           | Registrasi berhasil                     |            |
-| TC-DEC-REG-002| True                    | True                 | True                    | False                        | Error: Username/email duplikat| Registrasi ditolak, pesan error muncul  |            |
-| TC-DEC-REG-003| False (Kosong)          | True                 | True                    | True                         | Error: Username kosong        | Registrasi tidak diproses               |            |
-| TC-DEC-REG-004| True                    | False (Kosong/Invalid)| True                    | True                         | Error: Email kosong/invalid   | Registrasi tidak diproses               |            |
-| TC-DEC-REG-005| True                    | True                 | False (Kosong)          | True                         | Error: Password kosong        | Registrasi tidak diproses               |            |
+| ID            | Kondisi: Username Valid | Kondisi: Email Valid | Kondisi: Password Valid | Kondisi: Unik (User & Email) | Aksi: Expected Result           | Aksi: Actual Result (Observasi)         | Screenshot                                                                                           |
+|---------------|-------------------------|----------------------|-------------------------|------------------------------|----------------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------|
+| TC-DEC-REG-001| True                    | True                 | True                    | True                         | Registrasi berhasil             | Registrasi berhasil                     | <img src="https://github.com/user-attachments/assets/dc63909f-bbb8-4256-b57c-a9b265c54885" width="250"/> |
+| TC-DEC-REG-002| True                    | True                 | True                    | False                        | Error: Username/email duplikat  | Registrasi ditolak, pesan error muncul  | <img src="https://github.com/user-attachments/assets/d11b3836-0169-434e-ba35-7160ba7e5ca3" width="250"/> |
+| TC-DEC-REG-003| False (Kosong)          | True                 | True                    | True                         | Error: Username kosong          | Registrasi tidak diproses               | <img src="https://github.com/user-attachments/assets/897d222c-64a2-49f1-a66d-4cd3006022fc" width="250"/> |
+| TC-DEC-REG-004| True                    | False (Kosong/Invalid)| True                   | True                         | Error: Email kosong/invalid     | Registrasi tidak diproses               | <img src="https://github.com/user-attachments/assets/c4d9bdfb-c2aa-48ba-9cc2-50bb52fd2d1c" width="250"/> |
+| TC-DEC-REG-005| True                    | True                 | False (Kosong)          | True                         | Error: Password kosong          | Registrasi tidak diproses               | <img src="https://github.com/user-attachments/assets/7406b1c8-759d-427b-98db-093d8831e634" width="250"/> |
 
 ### 2.2. Fitur: Login
 **Aturan:**
@@ -57,13 +57,14 @@ Decision Table Testing adalah teknik desain test case black-box yang digunakan u
 *   Username harus terdaftar.
 *   Password harus cocok.
 
-| ID            | Kondisi: Username Kosong | Kondisi: Password Kosong | Kondisi: Username Terdaftar | Kondisi: Password Cocok | Aksi: Expected Result     | Aksi: Actual Result (Observasi)         | Screenshot |
-|---------------|--------------------------|--------------------------|-----------------------------|-------------------------|---------------------------|-----------------------------------------|------------|
-| TC-DEC-LOG-001| False                    | False                    | True                        | True                    | Login berhasil            | Login berhasil                          |            |
-| TC-DEC-LOG-002| True                     | False                    | -                           | -                       | Error: Username kosong    | Login gagal, pesan error username       |            |
-| TC-DEC-LOG-003| False                    | True                     | -                           | -                       | Error: Password kosong    | Login gagal, pesan error password       |            |
-| TC-DEC-LOG-004| False                    | False                    | False                       | -                       | Error: Username tidak ada | Login gagal, pesan user tidak ditemukan |            |
-| TC-DEC-LOG-005| False                    | False                    | True                        | False                   | Error: Password salah     | Login gagal, pesan password salah       |            |
+| ID            | Kondisi: Username Kosong | Kondisi: Password Kosong | Kondisi: Username Terdaftar | Kondisi: Password Cocok | Aksi: Expected Result       | Aksi: Actual Result (Observasi)         | Screenshot                                                                                           |
+|---------------|--------------------------|--------------------------|-----------------------------|-------------------------|-----------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------|
+| TC-DEC-LOG-001| False                    | False                    | True                        | True                    | Login berhasil              | Login berhasil                          | <img src="https://github.com/user-attachments/assets/b776e382-4e6a-4348-b428-29b912bb41f6" width="250"/> |
+| TC-DEC-LOG-002| True                     | False                    | -                           | -                       | Error: Username kosong      | Login gagal, pesan error username       | <img src="https://github.com/user-attachments/assets/5afba048-e589-43a6-87ac-8d93644917d9" width="250"/> |
+| TC-DEC-LOG-003| False                    | True                     | -                           | -                       | Error: Password kosong      | Login gagal, pesan error password       | <img src="https://github.com/user-attachments/assets/93572b99-0eb2-4d20-8f06-735b6ff29dba" width="250"/> |
+| TC-DEC-LOG-004| False                    | False                    | False                       | -                       | Error: Username tidak ada   | Login gagal, pesan user tidak ditemukan | <img src="https://github.com/user-attachments/assets/93572b99-0eb2-4d20-8f06-735b6ff29dba" width="250"/> |
+| TC-DEC-LOG-005| False                    | False                    | True                        | False                   | Error: Password salah       | Login gagal, pesan password salah       | <img src="https://github.com/user-attachments/assets/93572b99-0eb2-4d20-8f06-735b6ff29dba" width="250"/> |
+
 
 ### 2.3. Fitur: Tambah Tugas (Add Task)
 **Aturan:**
@@ -71,9 +72,10 @@ Decision Table Testing adalah teknik desain test case black-box yang digunakan u
 *   Title tidak boleh kosong.
 *   Description boleh kosong.
 
-| ID            | Kondisi: Login (Session Ada) | Kondisi: Title Kosong | Kondisi: Description Kosong | Aksi: Expected Result      | Aksi: Actual Result (Observasi)         | Screenshot |
-|---------------|------------------------------|-----------------------|-----------------------------|----------------------------|-----------------------------------------|------------|
-| TC-DEC-ADD-001| True                         | False                 | False                       | Task ditambahkan           | Task ditambahkan                        |            |
-| TC-DEC-ADD-002| True                         | True                  | False                       | Error: Title kosong        | Task tidak disimpan, flash error muncul |            |
-| TC-DEC-ADD-003| False                        | False                 | False                       | Redirect ke login          | Diarahkan ke halaman login              |            |
-| TC-DEC-ADD-004| True                         | False                 | True                        | Task ditambahkan           | Task ditambahkan                        |            |
+| ID            | Kondisi: Login (Session Ada) | Kondisi: Title Kosong | Kondisi: Description Kosong | Aksi: Expected Result      | Aksi: Actual Result (Observasi)         | Screenshot                                                                                           |
+|---------------|------------------------------|-----------------------|-----------------------------|----------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------|
+| TC-DEC-ADD-001| True                         | False                 | False                       | Task berhasil ditambahkan  | Task berhasil ditambahkan               | <img src="https://github.com/user-attachments/assets/f8786506-3ef7-4f53-91dc-3784a8b31c3f" width="250"/> |
+| TC-DEC-ADD-002| True                         | True                  | False                       | Error: Title kosong        | Task tidak ditambahkan, error muncul    | <img src="https://github.com/user-attachments/assets/30d514c2-5ab0-4f10-8af2-afc2b504f1a0" width="250"/> |
+| TC-DEC-ADD-003| False                        | False                 | False                       | Redirect ke halaman login  | Redirect ke login (akses ditolak)       |                                                                                 |
+| TC-DEC-ADD-004| True                         | False                 | True                        | Task berhasil ditambahkan  | Task berhasil ditambahkan               | <img src="https://github.com/user-attachments/assets/6f3662dc-1155-415e-96cb-5d23ebfcd57d" width="250"/> |
+
