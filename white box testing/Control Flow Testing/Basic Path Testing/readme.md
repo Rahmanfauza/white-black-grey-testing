@@ -21,6 +21,7 @@ V(G) = E - N + 2P
 | `add_task`     | 4        | 5        | 1              | 3                 | 2                 | POST task, GET form                                         |
 | `update_task`  | 3        | 4        | 1              | 3                 | 2                 | Proses update, redirect login                              |
 | `delete_task`  | 3        | 4        | 1              | 3                 | 2                 | Login dan hapus, redirect login                            |
+| `logout`       | 2        | 1        | 1              | 1                 | 1                 | Jalur linier: clear session & redirect   |
 
 
 
@@ -41,3 +42,6 @@ V(G) = E - N + 2P
 
 ## delete_task()
 [Lihat disini](delete_task.md)
+
+## logout()
+[Lihat disini](logout.md)
