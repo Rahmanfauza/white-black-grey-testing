@@ -16,14 +16,14 @@ Comparison Testing, sering juga disebut Back-to-Back Testing atau Comparative Te
 | ID             | Deskripsi Input (`username`, `email`, `password`) | Hasil v1.0 (Lama)      | Hasil v2.0 (Baru)                      | Status | Screenshot | Catatan                      |
 |----------------|---------------------------------------------------|------------------------|----------------------------------------|--------|------------|------------------------------|
 | TC-COMP-REG-001| Input valid standar                               | Registrasi Sukses      | Registrasi Sukses                      | ✅     |            | Perilaku konsisten           |
-| TC-COMP-REG-002| Input dengan panjang > 12 karakter                | Registrasi Sukses      | Error: "Username/password max 12 kar." | ⚠️     |            | Validasi baru di v2.0        |
+| TC-COMP-REG-002| Input dengan panjang > 12 karakter                | Registrasi Sukses      | Error: "Username/password max 12 kar." | ⚠️     | ![Image](https://github.com/user-attachments/assets/ac836606-cfc2-4ecb-af55-a02dfaeb170d)           | Validasi baru di v2.0        |
 
 ### 1.2. Fitur: Login
 **Perubahan Utama**: Batas panjang input di `v2.0` (maksimal 12 karakter) dan pesan error.
 
 | ID             | Deskripsi Input (`username`, `password`) | Hasil v1.0 (Lama) | Hasil v2.0 (Baru)                | Status | Screenshot | Catatan                      |
 |----------------|------------------------------------------|-------------------|----------------------------------|--------|------------|------------------------------|
-| TC-COMP-LOG-001| Input dengan panjang > 12 karakter       | Login Sukses      | Error: "Input max 12 karakter"   | ⚠️     |            | Validasi baru di v2.0        |
+| TC-COMP-LOG-001| Input dengan panjang > 12 karakter       | Login Sukses      | Error: "Input max 12 karakter"   | ⚠️     | ![Image](https://github.com/user-attachments/assets/95a16132-6824-4759-a854-aac9e3a61cf7)           | Validasi baru di v2.0        |
 | TC-COMP-LOG-002| Input valid standar                      | Login Sukses      | Login Sukses                     | ✅     |            | Tidak terpengaruh perubahan  |
 
 ### 1.3. Fitur: Tambah Tugas (Add Task)
