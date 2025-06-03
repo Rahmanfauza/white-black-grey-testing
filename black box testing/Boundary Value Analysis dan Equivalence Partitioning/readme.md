@@ -77,14 +77,14 @@ Equivalence Partitioning (juga dikenal sebagai Equivalence Class Partitioning) a
 
 **Kasus Uji EP:**
 
-| ID            | Deskripsi Input                         | Contoh Input                            | Partisi | Expected Result          | Screenshot | Catatan            |
-|---------------|-----------------------------------------|-----------------------------------------|---------|--------------------------|------------|--------------------|
-| TC-REG-EP-001 | Semua input valid                       | `("admin", "rahman@mail.com", "123")` | Valid   | Registrasi sukses        |            |                    |
-| TC-REG-EP-002 | Username kosong                         | `("", "rahman@mail.com", "123")`      | Invalid | Error: "Username kosong" |            |                    |
-| TC-REG-EP-003 | Format email salah                      | `("admin", "rahmanemail", "123")`       | Invalid | Error: "Email invalid"   |            |                    |
-| TC-REG-EP-004 | Password kosong                         | `("admin", "rahman@mail.com", "")`      | Invalid | Error: "Password kosong" |            |                    |
-| TC-REG-EP-005 | Username sudah ada (asumsi "admin" ada) | `("admin", "baru@mail.com", "456")`   | Invalid | Error: "Username exists" |            | Perlu data existing |
-| TC-REG-EP-006 | Email sudah ada (asumsi email ada)      | `("userbaru", "rahman@mail.com", "456")`| Invalid | Error: "Email exists"    |            | Perlu data existing |
+| ID            | Deskripsi Input                         | Contoh Input                              | Partisi | Expected Result          | Screenshot                                                                                          | Catatan             |
+|---------------|------------------------------------------|--------------------------------------------|---------|---------------------------|------------------------------------------------------------------------------------------------------|---------------------|
+| TC-REG-EP-001 | Semua input valid                       | `("admin", "rahmanf@mail.com", "123")`     | Valid   | Registrasi sukses         | <img src="https://github.com/user-attachments/assets/489243d6-dc62-4acc-ae26-d7027afe0411" width="250"/> |                     |
+| TC-REG-EP-002 | Username kosong                         | `("", "rahmanf@mail.com", "123")`          | Invalid | Error: "Username kosong"  | <img src="https://github.com/user-attachments/assets/1875dda6-3734-4914-b180-43e76abec3bc" width="250"/> |                     |
+| TC-REG-EP-003 | Format email salah                      | `("admin", "rahmanemail", "123")`          | Invalid | Error: "Email invalid"    | <img src="https://github.com/user-attachments/assets/fd7c6a51-726a-4848-9bc6-46670f46133d" width="250"/> |                     |
+| TC-REG-EP-004 | Password kosong                         | `("admin", "rahman@mail.com", "")`         | Invalid | Error: "Password kosong"  | <img src="https://github.com/user-attachments/assets/e5fe88b6-c560-4aa0-8c64-a44dd897deee" width="250"/> |                     |
+| TC-REG-EP-005 | Username sudah ada (asumsi "admin" ada) | `("admin", "baru@mail.com", "456")`        | Invalid | Error: "Username exists"  | <img src="https://github.com/user-attachments/assets/0e438aad-ac9f-4c6a-b030-267d0a27a54c" width="250"/> | Perlu data existing |
+| TC-REG-EP-006 | Email sudah ada (asumsi email ada)      | `("userbaru", "rahman@mail.com", "456")`   | Invalid | Error: "Email exists"     | <img src="https://github.com/user-attachments/assets/0e438aad-ac9f-4c6a-b030-267d0a27a54c" width="250"/> | Perlu data existing |
 
 ### 2.2. Fitur Login
 
@@ -99,7 +99,7 @@ Equivalence Partitioning (juga dikenal sebagai Equivalence Class Partitioning) a
 
 | ID            | Deskripsi Input         | Contoh Input        | Partisi | Expected Result          | Screenshot | Catatan            |
 |---------------|-------------------------|---------------------|---------|--------------------------|------------|--------------------|
-| TC-LOG-EP-001 | Kredensial valid        | `("admin", "123")`  | Valid   | Login sukses             |            |                    |
+| TC-LOG-EP-001 | Kredensial valid        | `("admin", "123")`  | Valid   | Login sukses             | ![Image](https://github.com/user-attachments/assets/3a15c5fc-63ed-49fe-bd2b-e41c629bc1a3)           |                    |
 | TC-LOG-EP-002 | Username kosong         | `("", "123")`       | Invalid | Error: "Username kosong" |            |                    |
 | TC-LOG-EP-003 | Password kosong         | `("admin", "")`       | Invalid | Error: "Password kosong" |            |                    |
 | TC-LOG-EP-004 | Password salah          | `("admin", "321")`  | Invalid | Error: "Password salah"  |            |                    |
