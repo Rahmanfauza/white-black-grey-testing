@@ -109,7 +109,7 @@ Dokumen ini berisi skenario pengujian untuk memastikan bahwa perubahan pada sist
 
 ---
 
-#✅ Test Case 8: Logout
+✅ Test Case 8: Logout
 
 **Langkah Pengujian:**
 1. Klik tombol "Logout"
