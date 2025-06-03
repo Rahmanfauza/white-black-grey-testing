@@ -50,7 +50,7 @@ Pattern Testing adalah pendekatan pengujian yang menekankan eksplorasi, kreativi
 | Operasi berulang | Tambah, edit status, hapus tugas sebanyak 50 kali | Tidak ada error atau delay |
 | Akses multitab | Login di 2 tab browser | Tidak logout paksa, data konsisten |
 
-🔁 catatan untuk melakukan Otomatis Tambah 100 Data Tugas
+🔁 Catatan untuk melakukan Otomatis Tambah 100 Data Tugas
 
 Untuk melakukan pengujian performa penambahan data massal, saya menggunakan script berikut melalui **DevTools Console** di browser:
 
@@ -65,7 +65,6 @@ for (let i = 1; i <= 100; i++) {
   });
 }
 
-📸 `screenshots/3.%20Performa%20dan%20Stabilitas/1.png`
 
 ---
 
