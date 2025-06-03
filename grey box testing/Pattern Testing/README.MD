@@ -66,7 +66,20 @@ for (let i = 1; i <= 100; i++) {
 ```
 📸 `screenshots/2.%20Menguji%20Batasan/1.png`
 
+🔁untuk melakuan Hapus Berulang (Stress Test)
 
+saya melakukan kombinasi:
+- Manual: 32 aksi edit & delete untuk verifikasi UI
+- Script: 18 penghapusan tambahan dijalankan melalui DevTools Console
+
+```javascript
+for (let i = 11; i <= 50; i++) {
+  fetch(`/tasks/${i}/delete`, {
+    method: 'POST'
+  });
+}
+---
+📸 `screenshots/2.%20Menguji%20Batasan/1.png`
 ---
 
 
