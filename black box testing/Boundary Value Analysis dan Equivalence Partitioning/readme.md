@@ -23,39 +23,43 @@ _* Catatan: Description pada BVA di file asli memiliki batas bawah 0 (kosong) ya
 
 **Fitur: Registrasi**
 
-| ID             | Parameter | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot | Catatan |
-|----------------|-----------|------------------|----------------|-----------------|---------------|-------------|------------|---------|
-| TC-REG-BVA-001 | Username  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
-| TC-REG-BVA-002 | Username  | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min     |
-| TC-REG-BVA-003 | Username  | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
-| TC-REG-BVA-004 | Username  | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
-| TC-REG-BVA-005 | Password  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
-| TC-REG-BVA-006 | Password  | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min     |
-| TC-REG-BVA-007 | Password  | "aa"             | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min+1   |
-| TC-REG-BVA-008 | Password  | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
-| TC-REG-BVA-009 | Password  | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
+| ID             | Parameter | Nilai Input       | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot                                                                                          | Catatan |
+|----------------|-----------|-------------------|----------------|-----------------|----------------|---------------|------------------------------------------------------------------------------------------------------|---------|
+| TC-REG-BVA-001 | Username  | "" (kosong)       | Batas Invalid  | Error           | Error          | ✔             | <img src="https://github.com/user-attachments/assets/42719675-53c6-4221-a6aa-3eb5144e5ae8" width="250"/> |         |
+| TC-REG-BVA-002 | Username  | "a"               | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/6c745df5-e5f2-43a3-864e-ebf9c9ae3eb0" width="250"/> | Min     |
+| TC-REG-BVA-003 | Username  | 12 chars          | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/58cb216a-f102-46fb-913d-a6c8a6530203" width="250"/> | Max     |
+| TC-REG-BVA-004 | Username  | 13 chars          | Batas Invalid  | Error           | Sukses         | ✖             | <img src="https://github.com/user-attachments/assets/58cb216a-f102-46fb-913d-a6c8a6530203" width="250"/> | Max+1   |
+| TC-REG-BVA-005 | Password  | "" (kosong)       | Batas Invalid  | Error           | Error          | ✔             | <img src="https://github.com/user-attachments/assets/7016939a-257d-4840-8a71-1b625b4f9644" width="250"/> |         |
+| TC-REG-BVA-006 | Password  | "a"               | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/58cb216a-f102-46fb-913d-a6c8a6530203" width="250"/> | Min     |
+| TC-REG-BVA-007 | Password  | "aa"              | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/58cb216a-f102-46fb-913d-a6c8a6530203" width="250"/> | Min+1   |
+| TC-REG-BVA-008 | Password  | 12 chars          | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/e18f6308-e86e-4af7-ad49-af0e0ef64c82" width="250"/> | Max     |
+| TC-REG-BVA-009 | Password  | 13 chars          | Batas Invalid  | Error           | Sukses         | ✖             | <img src="https://github.com/user-attachments/assets/7335d617-4d6e-43e9-b71c-f4f496a0f52a" width="250"/> | Max+1   |
+
 
 **Fitur: Login**
 
-| ID             | Parameter | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot | Catatan |
-|----------------|-----------|------------------|----------------|-----------------|---------------|-------------|------------|---------|
-| TC-LOG-BVA-001 | Username  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
-| TC-LOG-BVA-002 | Username  | "a"              | Batas Valid    | Tergantung auth | Sukses        | ✔           |            | Min     |
-| TC-LOG-BVA-003 | Password  | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
-| TC-LOG-BVA-004 | Password  | "a"              | Batas Valid    | Tergantung auth | Sukses        | ✔           |            | Min     |
+| ID             | Parameter | Nilai Input       | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot                                                                                          | Catatan |
+|----------------|-----------|-------------------|----------------|-----------------|----------------|---------------|------------------------------------------------------------------------------------------------------|---------|
+| TC-LOG-BVA-001 | Username  | "" (kosong)       | Batas Invalid  | Error           | Error          | ✔             | <img src="https://github.com/user-attachments/assets/75fe4ac0-29d6-4637-8f9d-41fccd6ec91d" width="250"/> |         |
+| TC-LOG-BVA-002 | Username  | "a"               | Batas Valid    | Tergantung auth | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/d1369163-4453-4492-a47d-7bc90aea2ab3" width="250"/> | Min     |
+| TC-LOG-BVA-003 | Password  | "" (kosong)       | Batas Invalid  | Error           | Error          | ✔             | <img src="https://github.com/user-attachments/assets/e3ff24d2-41ef-43d9-8362-a1808bae010f" width="250"/> |         |
+| TC-LOG-BVA-004 | Password  | "a"               | Batas Valid    | Tergantung auth | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/d1369163-4453-4492-a47d-7bc90aea2ab3" width="250"/> | Min     |
+
+
 
 **Fitur: Tambah Tugas (Add Task)**
 
-| ID             | Parameter    | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot | Catatan |
-|----------------|--------------|------------------|----------------|-----------------|---------------|-------------|------------|---------|
-| TC-ADD-BVA-001 | Title        | "" (kosong)      | Batas Invalid  | Error           | Error         | ✔           |            |         |
-| TC-ADD-BVA-002 | Title        | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min     |
-| TC-ADD-BVA-003 | Title        | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
-| TC-ADD-BVA-004 | Title        | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
-| TC-ADD-BVA-005 | Description  | "" (kosong)      | Batas Valid*   | Sukses          | Sukses        | ✔           |            | Min (Opsional) |
-| TC-ADD-BVA-006 | Description  | "a"              | Batas Valid    | Sukses          | Sukses        | ✔           |            | Min+1   |
-| TC-ADD-BVA-007 | Description  | 12 chars         | Batas Valid    | Sukses          | Sukses        | ✔           |            | Max     |
-| TC-ADD-BVA-008 | Description  | 13 chars         | Batas Invalid  | Error           | Sukses        | ✖           |            | Max+1   |
+| ID             | Parameter   | Nilai Input      | Kategori       | Expected Result | Actual Result | Status (✔/✖) | Screenshot                                                                                          | Catatan         |
+|----------------|-------------|------------------|----------------|-----------------|----------------|---------------|------------------------------------------------------------------------------------------------------|-----------------|
+| TC-ADD-BVA-001 | Title       | "" (kosong)      | Batas Invalid  | Error           | Error          | ✔             | <img src="https://github.com/user-attachments/assets/b0848ce1-70f3-45b5-940b-ebc41ab54153" width="250"/> |                 |
+| TC-ADD-BVA-002 | Title       | "a"              | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/655d80db-0d27-4c72-87a5-e43c7b28c7a7" width="250"/> | Min             |
+| TC-ADD-BVA-003 | Title       | 12 chars         | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/9d63dec6-2132-4a10-bc71-c12461581e68" width="250"/> | Max             |
+| TC-ADD-BVA-004 | Title       | 13 chars         | Batas Invalid  | Error           | Sukses         | ✖             | <img src="https://github.com/user-attachments/assets/9d63dec6-2132-4a10-bc71-c12461581e68" width="250"/> | Max+1           |
+| TC-ADD-BVA-005 | Description | "" (kosong)      | Batas Valid*   | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/5b53b746-1164-456c-a3ae-3c9002d67dc8" width="250"/> | Min (Opsional)  |
+| TC-ADD-BVA-006 | Description | "a"              | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/c7e0c262-d38f-40fe-98a4-dba5601ea413" width="250"/> | Min+1           |
+| TC-ADD-BVA-007 | Description | 12 chars         | Batas Valid    | Sukses          | Sukses         | ✔             | <img src="https://github.com/user-attachments/assets/d2ed49cc-45e5-4cd8-a3db-cca359fbdcc0" width="250"/> | Max             |
+| TC-ADD-BVA-008 | Description | 13 chars         | Batas Invalid  | Error           | Sukses         | ✖             | <img src="https://github.com/user-attachments/assets/d2ed49cc-45e5-4cd8-a3db-cca359fbdcc0" width="250"/> | Max+1           |
+
 
 ## 2. Equivalence Partitioning (EP)
 
