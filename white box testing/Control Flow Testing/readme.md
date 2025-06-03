@@ -1,4 +1,4 @@
-# Dokumentasi Pengujian Control Flow Testing
+# Pengujian Control Flow Testing
 
 ## Fungsi `login()`
 [Lihat disini](login.md)
@@ -17,3 +17,6 @@
 
 ## Fungsi `update_task()`
 [Lihat disini](update_task.md)
+
+## Fungsi `logout()`
+[Lihat disini](logout.md)
