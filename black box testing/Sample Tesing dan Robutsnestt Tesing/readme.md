@@ -2,22 +2,21 @@
 ## 1. Sample Testing
 Sample Testing adalah pendekatan pengujian di mana hanya sebagian (sampel) dari fungsionalitas, data, atau skenario yang mungkin dari suatu aplikasi yang diuji, bukan keseluruhan. Tujuannya adalah untuk mendapatkan indikasi kualitas atau kinerja sistem secara keseluruhan dengan usaha pengujian yang terbatas.
 
-## Sample Testing
-| No. | Feature            | Input Data                                                         | Expected Output                                      | Status (✔️/❌) | Screenshot                           |
-| --- | ------------------ | ------------------------------------------------------------------ | ---------------------------------------------------- | ------------- | -------------------------------------- |
-| 1   | User Registration  | username: `testuser`, email: `test@mail.com`, password: `Test123!` | User is registered successfully, redirected to login |               | (screenshot/registration\_success.png) |
-| 2   | User Login         | username: `testuser`, password: `Test123!`                         | User is logged in, redirected to dashboard           |               | (screenshot/login\_success.png)        |
-| 3   | Add Task           | title: `Buy Groceries`, description: `Eggs, milk`                  | Task appears in dashboard with correct data          |               | (screenshot/add\_task.png)             |
-| 4   | View Task Details  | Click task `Buy Groceries`                                         | Task details page displays correct information       |               | (screenshot/task\_detail.png)          |
-| 5   | Update Task Status | Change status to `completed`                                       | Status is updated, success message shown             |               | (screenshot/update\_status.png)        |
-| 6   | Delete Task        | Click delete on `Buy Groceries`                                    | Task is removed, success message shown               |               | (screenshot/delete\_task.png)          |
-| 7   | Logout             | -                                                                  | User is logged out, redirected to login              |               | (screenshot/logout.png)                |
+| No. | Fitur               | Data Masukan                                                       | Output yang Diharapkan                                  | Status (✔️/❌) | Tangkapan Layar                                                                                      |
+|-----|---------------------|--------------------------------------------------------------------|----------------------------------------------------------|----------------|--------------------------------------------------------------------------------------------------------|
+| 1   | Registrasi Pengguna | username: `testuser`, email: `test@mail.com`, password: `Test123!` | Pengguna berhasil terdaftar, diarahkan ke halaman login | ✔️             | <img src="https://github.com/user-attachments/assets/abf112d3-60d5-41e4-b9e6-224e25d4760e" width="250"/> |
+| 2   | Login Pengguna      | username: `testuser`, password: `Test123!`                         | Pengguna berhasil login, diarahkan ke dashboard         | ✔️             | <img src="https://github.com/user-attachments/assets/2afa4397-1c73-4704-8973-fa0ff9e24435" width="250"/> |
+| 3   | Tambah Tugas        | judul: `Beli Belanjaan`, deskripsi: `Telur, susu`                  | Tugas muncul di dashboard dengan data yang sesuai       | ✔️             | <img src="https://github.com/user-attachments/assets/961c293f-07de-4925-985a-34e2dbf6e11a" width="250"/> |
+| 4   | Lihat Detail Tugas  | Klik tugas `Beli Belanjaan`                                        | Halaman detail tugas menampilkan informasi yang benar   | ✔️             | <img src="https://github.com/user-attachments/assets/e742dbd7-2662-4c91-9a39-a70327ffe8cc" width="250"/> |
+| 5   | Perbarui Status     | Ubah status menjadi `selesai`                                      | Status diperbarui, pesan sukses ditampilkan             | ✔️             | <img src="https://github.com/user-attachments/assets/12132cda-b880-435f-8a2d-7a8e2a91aee5" width="250"/> |
+| 6   | Hapus Tugas         | Klik hapus pada `Beli Belanjaan`                                   | Tugas dihapus, pesan sukses ditampilkan                 | ✔️             | <img src="https://github.com/user-attachments/assets/52d3d8e1-8a8a-4436-8552-30cf00debcb9" width="250"/> |
+| 7   | Logout              | -                                                                  | Pengguna berhasil logout, diarahkan ke halaman login    | ✔️             | <img src="https://github.com/user-attachments/assets/df74ec54-2eb2-47da-9f5d-2ce5af8862b8" width="250"/> |
 
 
 ## 2. Robustness Testing
 Robustness Testing adalah jenis pengujian fungsional yang bertujuan untuk memverifikasi seberapa baik sistem perangkat lunak dapat menangani kondisi input yang tidak valid, kondisi lingkungan yang tidak terduga, atau situasi stres lainnya tanpa mengalami kegagalan (crash) atau perilaku yang tidak benar.
 
-| No. | Feature            | Input Data                                                         | Expected Output                                         | Status (✔️/❌) | Screenshot (Optional)                          |
+| No. | Feature            | Input Data                                                         | Expected Output                                         | Status (✔️/❌) | Screenshot                          |
 | --- | ------------------ | ------------------------------------------------------------------ | ------------------------------------------------------- | ------------- | ---------------------------------------------- |
 | 1   | User Registration  | username: \`\`, email: `test@mail.com`, password: `Test123!`       | Registration fails with error message                   |               | (screenshot/registration\_empty\_username.png) |
 | 2   | User Registration  | username: `longusername...` (1000 chars)                           | Application handles gracefully, limit enforced          |               | (screenshot/registration\_long\_username.png)  |
