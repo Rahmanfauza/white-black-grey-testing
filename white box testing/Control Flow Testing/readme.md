@@ -17,9 +17,3 @@
 
 ## Fungsi `update_task()`
 [Lihat disini](update_task.md)
-
-## Fungsi `complete_task()`
-[Lihat disini](complete_task.md)
-
-## Fungsi `task_today()`
-[Lihat disini](task_today.md)
