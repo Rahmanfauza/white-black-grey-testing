@@ -7,7 +7,7 @@ def logout():
     flash('Logout berhasil.', 'success')
     return redirect(url_for('login'))
 ```
-Flow Diagram
+### Flow Diagram
 ```
 (1) Start
  |
