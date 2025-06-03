@@ -1,122 +1,20 @@
 🧪 Regression Testing – Task Manager App
 
-Dokumen ini berisi skenario pengujian untuk memastikan bahwa perubahan pada sistem `created_at` tidak merusak fitur-fitur utama dalam aplikasi Task Manager.
+Dokumen ini merangkum hasil pengujian regresi untuk memastikan bahwa perubahan pada sistem `created_at` tidak merusak fitur-fitur utama dalam aplikasi Task Manager.
 
 ---
 
-✅ Test Case 1: Login
+📋 Rekap Hasil Pengujian
 
-**Langkah Pengujian:**
-1. Buka halaman `/login`
-2. Masukkan username dan password valid
+Berikut merupakan rekap hasil pengujian regresi secara ringkas dalam bentuk tabel:
 
-**Hasil yang Diharapkan:**
-- ✅ Berpindah ke halaman `/dashboard`
-- ✅ Muncul flash message: `Login berhasil!`
-
-**Status:** [✅]  
-**Catatan:** sesuai dengan yang diharapkan, hanyasaja database terlalu lambat merekam input sesuai perkiraan
-
-
----
-
-✅ Test Case 2: Register
-
-**Langkah Pengujian:**
-1. Buka halaman `/register`
-2. Isi form: username, email, password
-
-**Hasil yang Diharapkan:**
-- ✅ Redirect ke `/login`
-- ✅ Flash message: `Registrasi berhasil`
-
-**Status:** [✅]  
-**Catatan:** sesuai
-
----
-
-✅ Test Case 3: Tambah Tugas
-
-**Langkah Pengujian:**
-1. Login terlebih dahulu
-2. Di dashboard, isi form tambah tugas
-
-**Data yang Diperiksa:**
-- ✅ Data masuk ke database
-- ✅ Kolom `created_at` menyimpan waktu ISO (cek via SQLite)
-- ✅ Di UI, waktu diformat `dd-mm-yyyy hh:mm`
-
-**Status:** [✅]  
-**Catatan:** database lambat dalam input yang dimasukkan
-
----
-
-✅ Test Case 4: Lihat Daftar Tugas
-
-**Langkah Pengujian:**
-1. Login
-2. Buka `/dashboard`
-
-**Hasil yang Diharapkan:**
-- ✅ Tugas muncul
-- ✅ Tersortir dari waktu terbaru ke lama
-
-**Status:** [✅]  
-**Catatan:** sesuai
-
----
-
-✅ Test Case 5: Detail Tugas
-
-**Langkah Pengujian:**
-1. Klik salah satu tugas
-
-**Hasil yang Diharapkan:**
-- ✅ Semua info tampil (title, desc, status, waktu)
-- ✅ Format waktu rapi dan terbaca
-
-**Status:** [✅]  
-**Catatan:** sesuai
-
----
-
-✅ Test Case 6: Update Status Tugas
-
-**Langkah Pengujian:**
-1. Masuk ke detail tugas
-2. Ubah status (*pending → selesai*)
-
-**Hasil yang Diharapkan:**
-- ✅ Status tersimpan di database
-- ✅ Muncul flash message konfirmasi
-
-**Status:** [✅]  
-**Catatan:** sesuai, hanya saja database tidak dapat di akses
----
-
-✅ Test Case 7: Hapus Tugas
-
-**Langkah Pengujian:**
-1. Masuk ke detail tugas
-2. Klik tombol "hapus"
-
-**Hasil yang Diharapkan:**
-- ✅ Tugas dihapus dari database
-- ✅ Tidak muncul lagi di dashboard
-
-**Status:** [✅]  
-**Catatan:** sudah sesuai
-
----
-
-✅ Test Case 8: Logout
-
-**Langkah Pengujian:**
-1. Klik tombol "Logout"
-
-**Hasil yang Diharapkan:**
-- ✅ Dialihkan ke halaman `/login`
-- ✅ Session dihapus
-
-**Status:** [❌]  
-**Catatan:** nama user masih tertera ketika logout
+| No | Test Case              | Status | Hasil yang Diharapkan                                                                 | Catatan                                                                 | Screenshot |
+|----|------------------------|--------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------|
+| 1  | Login                  | ✅     | Redirect ke `/dashboard`, flash `"Login berhasil!"`                                   | Sesuai, hanya saja database agak lambat merekam input                  | ![Login](screenshots/login_success.png) |
+| 2  | Register               | ✅     | Redirect ke `/login`, flash `"Registrasi berhasil"`                                   | Sesuai                                                                 | ![Register](screenshots/register_success.png) |
+| 3  | Tambah Tugas           | ✅     | Data masuk DB, `created_at` format ISO, waktu tampil rapi                             | Sesuai, database lambat dalam menyimpan input                          | ![Tambah](screenshots/add_task_created_at.png) |
+| 4  | Lihat Daftar Tugas     | ✅     | Tugas muncul dan tersortir dari terbaru                                                | Sesuai                                                                 | ![Dashboard](screenshots/dashboard_sorted.png) |
+| 5  | Detail Tugas           | ✅     | Semua data tampil lengkap, format waktu rapi                                           | Sesuai                                                                 | ![Detail](screenshots/detail_task.png) |
+| 6  | Update Status Tugas    | ✅     | Status berubah di DB, flash message muncul                                             | Sesuai, tapi sempat gagal akses DB                                     | ![Update](screenshots/update_status.png) |
+| 7  | Hapus Tugas            | ✅     | Tugas terhapus dari DB dan dashboard                                                   | Sudah sesuai                                                           | ![Delete](screenshots/delete_task.png) |
+| 8  | Logout                 | ❌     | Redirect ke `/login`, session terhapus                                                 | Nama user masih muncul setelah logout                                  | ![Logout](screenshots/logout_failed.png) |
