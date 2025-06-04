@@ -17,15 +17,14 @@ Dokumentasi ini berisi rangkaian pengujian eksploratif (Pattern Testing) yang di
 
 ---
 
-## 🚧 2. Test Case – Batasan & Input Aneh
+🚧 2. Test Case – Batasan & Input Aneh
 
-| No | Skenario | Input | Hasil yang Diharapkan | Status | Screenshot |
-|----|----------|-------|------------------------|--------|-----------|
-| 2.1 | Judul kosong | `""` | Validasi muncul: “Judul wajib diisi” | ✅ | ![Screenshot 7](screenshots/2.%20Menguji%20Batasan/1.png) |
-| 2.2 | Deskripsi kosong | (biarkan kosong) | Tetap tersimpan tanpa error | ✅ | ![Screenshot 8](screenshots/2.%20Menguji%20Batasan/2.png) |
-| 2.3 | Input sangat panjang | >10.000 karakter di deskripsi | Tidak crash, data tersimpan atau ditolak sopan | ✅ | ![Screenshot 9](screenshots/2.%20Menguji%20Batasan/3.png) |
-| 2.4 | Karakter aneh di judul | "!@#*🤯🎉" | Tidak error, tetap ditampilkan dengan aman | ✅ | ![Screenshot 10](screenshots/2.%20Menguji%20Batasan/4.png) |
-| 2.5 | Input skrip (XSS attempt) | `<script>alert(1)</script>` | Teks ditampilkan sebagai string biasa, tidak dieksekusi | ✅ | ![Screenshot 11](screenshots/2.%20Menguji%20Batasan/5.png) |
+| No  | Skenario                   | Input                     | Hasil yang Diharapkan                             | Status | Screenshot |
+|-----|----------------------------|---------------------------|---------------------------------------------------|--------|------------|
+| 2.1 | Judul dan Deskripsi kosong | *(biarkan kosong)*        | Tetap tersimpan tanpa error                       | ✅     | <img width="400" alt="2.1" src="https://github.com/user-attachments/assets/170067f5-4c16-4c8f-8daa-242d16246676" /> |
+| 2.2 | Input sangat panjang       | >10.000 karakter di deskripsi | Tidak crash, data tersimpan atau ditolak sopan | ✅     | <img width="400" alt="2.2" src="https://github.com/user-attachments/assets/ef4f8595-4a2f-4533-84d9-a3653c137fc1" /> |
+| 2.3 | Karakter aneh di judul     | "!@#*🤯🎉"                | Tidak error, tetap ditampilkan dengan aman         | ✅     | <img width="400" alt="2.3" src="https://github.com/user-attachments/assets/6e9a9bcb-0b43-4300-91b4-16268012315a" /> |
+
 
 ---
 
