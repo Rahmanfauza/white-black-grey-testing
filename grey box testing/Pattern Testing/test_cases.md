@@ -30,11 +30,12 @@ Dokumentasi ini berisi rangkaian pengujian eksploratif (Pattern Testing) yang di
 
 ⚙️ 3. Test Case – Performa dan Stabilitas
 
-| No | Skenario | Langkah | Hasil yang Diharapkan | Status | Screenshot |
-|----|----------|--------|------------------------|--------|-----------|
-| 3.1 | Tambah banyak tugas | Tambah 100 tugas via form/manual | Aplikasi tetap responsif | ✅ | ![Screenshot 12](screenshots/3.%20Performa%20dan%20Stabilitas/1.png) |
-| 3.2 | Operasi berulang | Tambah, edit, hapus secara berurutan 10x | Tidak freeze/crash | ✅ | ![Screenshot 13](screenshots/3.%20Performa%20dan%20Stabilitas/2.png) |
-| 3.3 | Akses multitab | Login dari 2 tab | Tidak logout paksa, data konsisten | ✅ | ![Screenshot 14](screenshots/3.%20Performa%20dan%20Stabilitas/3.png) |
+| No  | Skenario          | Langkah                                  | Hasil yang Diharapkan                        | Status | Screenshot |
+|-----|-------------------|------------------------------------------|----------------------------------------------|--------|------------|
+| 3.1 | Tambah banyak tugas | Tambah 100 tugas via form/manual        | Aplikasi tetap responsif                     | ✅     | <img width="400" alt="3.1" src="https://github.com/user-attachments/assets/17d398c3-8a8d-4115-a6a2-bf6039cc024d" /> |
+| 3.2 | Operasi berulang  | Tambah, edit, hapus secara berurutan 10x | Tidak freeze/crash                           | ✅     | <img width="400" alt="3.2" src="https://github.com/user-attachments/assets/d06a4b06-c1bd-4eb5-878b-e6870ffb2712" /> |
+| 3.3 | Akses multitab    | Login dari 2 tab                         | Tidak logout paksa, data konsisten           | ✅     | <img width="400" alt="3.3" src="https://github.com/user-attachments/assets/f37b7b00-e212-4b13-8208-f17fd27f233c" /> |
+
 
 ---
 🎨 4. Test Case – Usability & Pengalaman Pengguna
