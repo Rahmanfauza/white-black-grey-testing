@@ -12,4 +12,3 @@ Model Data Flow Testing menelusuri bagaimana data dan variabel dideklarasikan, d
 | `session`    | Dibentuk saat login                           | Digunakan untuk menjaga autentikasi sesi     | Menyimpan status login dan identitas pengguna dalam sesi web.            |
 | `date`       | Diform input di tambah & update task          | Digunakan untuk filter & tampilan            | Digunakan untuk menjadwalkan tugas dan klasifikasi waktu.                |
 | `tasks`      | Hasil dari query DB di dashboard/today        | Di-loop untuk ditampilkan                    | Kumpulan data tugas yang akan dirender dalam halaman HTML.               |
-| `now`, `tz`  | Dibentuk di `tasks_today`                     | Digunakan untuk filter waktu saat ini        | Menentukan zona waktu dan menyaring task berdasarkan hari ini.           |
