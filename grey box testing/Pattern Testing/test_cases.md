@@ -40,22 +40,22 @@ Dokumentasi ini berisi rangkaian pengujian eksploratif (Pattern Testing) yang di
 ---
 🎨 4. Test Case – Usability & Pengalaman Pengguna
 
-| No | Skenario | Fokus | Hasil yang Diharapkan | Status | Screenshot |
-|----|----------|-------|------------------------|--------|------------|
-| 4.1 | Navigasi menu | Klik Dashboard, Tasks, Settings | ⚠️ Di halaman **Dashboard**, menu sisi kiri muncul dan navigasi mudah. Di halaman **Tasks**, menu kiri tidak muncul namun tersedia tombol kembali di bawah. Di halaman **Settings**, tidak ada tombol kembali ke Dashboard – hanya bisa klik icon profil. | ✅ | ![Screenshot 15](screenshots/4.%20Kegunaan%20UX/1-navigasi.png) |
-| 4.2 | Feedback error | Input password salah di login | Pesan error muncul dengan warna yang jelas | ✅ | ![Screenshot 16](screenshots/4.%20Kegunaan%20UX/2-feedback.png) |
-| 4.3 | Placeholder form | Formulir isian memiliki placeholder & label yang jelas | Placeholder dan label muncul di semua form | ✅ | ![Screenshot 17](screenshots/4.%20Kegunaan%20UX/3-tombol-interaktif.png) |
-| 4.4 | Komponen interaktif | Cek semua tombol dan ikon berfungsi | ⚠️ Ditemukan beberapa tombol tidak berfungsi:<br>• Tombol lihat kata sandi (tidak aktif)<br>• Tombol forgot password (tidak merespons)<br>• Tombol reset tugas (tidak merespons)<br>• Tombol ganti warna tema di Settings (tidak aktif) | ❌ | ![Screenshot 18](screenshots/4.%20Kegunaan%20UX/4-ui-konsisten.png) |
-| 4.5 | UI konsisten | Cek keseragaman font, warna, dan layout | Semua halaman menggunakan layout dan style konsisten | ✅ | ![Screenshot 19](screenshots/4.%20Kegunaan%20UX/5-responsif.png) |
+| No  | Skenario            | Fokus                                   | Hasil yang Diharapkan                                                                                                                                                 | Status | Screenshot |
+|-----|---------------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|------------|
+| 4.1 | Navigasi menu       | Klik Dashboard, Tasks, Settings          | ⚠️ Di halaman **Dashboard**, menu sisi kiri muncul dan navigasi mudah. Di halaman **Tasks**, menu kiri tidak muncul namun tersedia tombol kembali di bawah. Di halaman **Settings**, tidak ada tombol kembali ke Dashboard – hanya bisa klik icon profil. | ✅     | <img width="400" src="https://github.com/user-attachments/assets/784250f4-a454-4597-b20b-3f1fd2d247cd" /> <img width="400" src="https://github.com/user-attachments/assets/c75296c5-fa36-407c-9ace-3df7bb18885e" /> <img width="400" src="https://github.com/user-attachments/assets/922ebb84-308b-4cb8-938c-9e49323a5f62" /> |
+| 4.2 | Feedback error      | Input password salah di login            | Pesan error muncul dengan warna yang jelas                                                                                                                             | ✅     | <img width="400" src="https://github.com/user-attachments/assets/f18703cc-da53-4828-8fab-bda764231ee9" /> <img width="400" src="https://github.com/user-attachments/assets/58dbe9e9-50fd-4915-8ea5-39699af2f12d" /> |
+| 4.3 | Placeholder form    | Formulir isian memiliki placeholder & label | Placeholder dan label muncul di semua form                                                                                                                            | ✅     | <img width="200" src="https://github.com/user-attachments/assets/cba5d8cf-f3cc-45b4-bbd5-e9b418605e9a" /> <img width="200" src="https://github.com/user-attachments/assets/45dc4f11-1684-4a31-8852-43a57c449d97" /> <img width="200" src="https://github.com/user-attachments/assets/f81ff1ef-4047-4c46-85e8-190652eff094" /> <img width="200" src="https://github.com/user-attachments/assets/5bbf3750-1fdb-49f9-b851-e985fdad1739" /> |
+| 4.4 | Komponen interaktif | Cek semua tombol dan ikon berfungsi      | ⚠️ Ditemukan beberapa tombol tidak berfungsi:<br>• Tombol lihat kata sandi (tidak aktif)<br>• Tombol forgot password (tidak merespons)<br>• Tombol reset tugas (tidak merespons)<br>• Tombol ganti warna tema di Settings (tidak aktif) | ❌     | <img width="400" src="https://github.com/user-attachments/assets/328d28d6-02e3-4dae-9e00-6f2379a9ac32" /> |
+| 4.5 | UI konsisten        | Cek keseragaman font, warna, dan layout | Semua halaman menggunakan layout dan style konsisten                                                                                                                  | ✅     | <img width="400" src="https://github.com/user-attachments/assets/316b4598-e61a-427d-8118-20772f126b81" /> |
 
 
 ---
 
-## 📌 Catatan Umum:
+📌 Catatan Umum:
 
 - Semua pengujian dilakukan menggunakan **user: airin**.
 - Aplikasi lolos uji untuk input ekstrem, edge cases, dan tetap stabil walau diuji berulang dan cepat.
-- Pengujian dilakukan secara manual dengan browser Chrome pada resolusi layar laptop.
+- Pengujian dilakukan secara manual dan sebagian menggunakan console skrip otomatis dengan browser Chrome pada resolusi layar laptop.
 
 ---
 
