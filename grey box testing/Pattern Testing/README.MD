@@ -82,8 +82,17 @@ for (let i = 11; i <= 50; i++) {
 ---
 📸 `screenshots/2.%20Menguji%20Batasan/1.png`
 ---
+### 🔁 Akses Multitab – Hasil Pengujian
 
+- ✅ Login berhasil di dua tab browser secara bersamaan
+- ✅ Semua tindakan (tambah, hapus, edit) berjalan tanpa error
+- ✅ Session tidak bentrok atau logout paksa
+- ⚠️ Catatan: Saat membuat tugas di tab pertama, tab kedua **harus di-refresh** manual agar data terbaru muncul. Ini wajar karena aplikasi belum mendukung sinkronisasi real-time (misalnya via WebSocket/AJAX).
 
+📌 Kesimpulan: Pengujian dianggap **berhasil** dari sisi stabilitas session dan keamanan akses. Perilaku non-real-time adalah hal umum pada aplikasi tanpa fitur live update.
+📸 `screenshots/2.%20Menguji%20Batasan/1.png`
+
+---
 
 4. 🎨 Menguji Kegunaan & UX
 
