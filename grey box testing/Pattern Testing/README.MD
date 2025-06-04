@@ -102,6 +102,9 @@ Pattern Testing berhasil menemukan beberapa temuan penting:
 - Perbaiki fungsionalitas tombol-tombol interaktif yang tidak bekerja (lihat password, reset, forgot password)
 - Gunakan alert/feedback yang lebih kontras dan konsisten saat aksi berhasil/gagal
 
+---
 
 untuk melihat hasil test yang valid ada pada bagian test_cases.md
+
+---
 
