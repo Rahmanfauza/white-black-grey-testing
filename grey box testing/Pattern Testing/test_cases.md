@@ -28,7 +28,7 @@ Dokumentasi ini berisi rangkaian pengujian eksploratif (Pattern Testing) yang di
 
 ---
 
-## ⚙️ 3. Test Case – Performa dan Stabilitas
+⚙️ 3. Test Case – Performa dan Stabilitas
 
 | No | Skenario | Langkah | Hasil yang Diharapkan | Status | Screenshot |
 |----|----------|--------|------------------------|--------|-----------|
