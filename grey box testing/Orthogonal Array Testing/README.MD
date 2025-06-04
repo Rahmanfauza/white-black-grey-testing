@@ -76,12 +76,12 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 | TC1 | Kosong  | Kosong      | pending     | Invalid    | valid         | ❌        | ![](./screenshots/TC1.png)              |
 | TC2 | Kosong  | Normal      | selesai     | Invalid    | valid         | ❌        | ![](./screenshots/TC2.png)              |
 | TC3 | Kosong  | Panjang     | in progress | Invalid    | valid         | ❌        | ![](./screenshots/TC3.png)              |
-| TC4 | Normal  | Kosong      | selesai     | Valid      | valid         | ✅        | ![](./screenshots/TC4.png)              |
-| TC5 | Normal  | Normal      | in progress | Valid      | valid         | ✅        | ![](./screenshots/TC5.png)              |
-| TC6 | Normal  | Panjang     | pending     | Valid      | valid         | ✅        | ![](./screenshots/TC6.png)              |
-| TC7 | Panjang | Kosong      | in progress | Valid      | valid         | ✅        | ![](./screenshots/TC7.png)              |
-| TC8 | Panjang | Normal      | pending     | Valid      | valid         | ✅        | ![](./screenshots/TC8.png)              |
-| TC9 | Panjang | Panjang     | selesai     | Valid      | valid         | ✅        | ![](./screenshots/TC9.png)              |
+| TC4 | Normal  | Kosong      | selesai     | Valid      | valid         | ❌        | ![](./screenshots/TC4.png)              |
+| TC5 | Normal  | Normal      | in progress | Valid      | valid         | ❌        | ![](./screenshots/TC5.png)              |
+| TC6 | Normal  | Panjang     | pending     | Valid      | valid         | ❌        | ![](./screenshots/TC6.png)              |
+| TC7 | Panjang | Kosong      | in progress | Valid      | valid         | ❌        | ![](./screenshots/TC7.png)              |
+| TC8 | Panjang | Normal      | pending     | Valid      | valid         | ❌        | ![](./screenshots/TC8.png)              |
+| TC9 | Panjang | Panjang     | selesai     | Valid      | valid         | ❌        | ![](./screenshots/TC9.png)              |
 
 ---
 
