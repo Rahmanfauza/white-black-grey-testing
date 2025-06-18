@@ -66,10 +66,11 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 
 📊 Hasil Uji Aktual – Disertai Bukti Screenshot
 
-<img width="600" alt="TC1–TC2" src="https://github.com/user-attachments/assets/a3e0b903-ce60-4401-8562-48d5699fdf65" />
-<img width="600" alt="TC3–TC4" src="https://github.com/user-attachments/assets/c3c45afe-83c3-425b-9622-6bb8d317c36e" />
-<img width="600" alt="TC5–TC6" src="https://github.com/user-attachments/assets/c8b2c24c-d874-45ab-932b-b76560b17701" />
-<img width="600" alt="TC7–TC9" src="https://github.com/user-attachments/assets/cd68e515-4339-4cc6-97c4-e17135ed4e41" />
+<img width="600" alt="Hasil TC1–TC3" src="https://github.com/user-attachments/assets/1c62ca63-2594-47e1-8e9c-37d77744984e" />
+
+<img width="600" alt="Hasil TC4–TC6" src="https://github.com/user-attachments/assets/1cf5e715-1c41-4cbb-8095-347cfc4acbff" />
+
+<img width="600" alt="Hasil TC7–TC9" src="https://github.com/user-attachments/assets/051e0dc7-c11b-41a3-9718-247b6bd69423" />
 
 ---
 
