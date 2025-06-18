@@ -76,11 +76,20 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 
 🧠 Insight & Kesimpulan
 
-- Dari 9 test case yang diuji, sistem **menganggap semua input valid**, termasuk kombinasi dengan **judul kosong** (TC1–TC3) yang **seharusnya invalid**.
-- Hasil ini menunjukkan bahwa validasi pada field *judul* **belum diterapkan dengan ketat** di sisi server.
-- Semua data berhasil disimpan dan muncul di halaman task list, menandakan bahwa **endpoint `/tasks/add` menerima semua input** selama user dalam sesi login.
-- Aplikasi tetap **stabil dan tidak mengalami crash**, bahkan saat menerima input deskripsi yang sangat panjang.
-- Pendekatan OAT memungkinkan **pengujian efisien** dengan hanya 9 kombinasi, tanpa kehilangan cakupan variasi logis.
-- Script `run_oat_tests.py` sangat membantu proses pengujian karena dapat **mendeteksi ketidaksesuaian antara ekspektasi dan realita** dengan cepat dan otomatis.
+Hasil pengujian menggunakan metode Orthogonal Array Testing (OAT) mengungkap beberapa temuan penting yang sangat relevan terhadap asumsi awal validasi sistem:
+
+- **Tiga kombinasi awal (TC1–TC3)** yang mengandung *judul kosong* seharusnya ditolak sesuai ekspektasi (`invalid`). Namun, berdasarkan hasil aktual, sistem **menerima input tersebut dan menyimpannya ke dalam task list**. Ini menunjukkan bahwa validasi field `judul` **belum diterapkan secara server-side**.
+- Kombinasi lain dengan judul "normal" atau "sangat panjang" diproses dan ditampilkan dengan benar di dashboard aplikasi. Semua data tersimpan dalam kondisi stabil tanpa crash, **membuktikan bahwa aplikasi dapat menangani input besar dan variatif dengan baik**.
+- Status task seperti `pending`, `completed`, dan `in-progress` berhasil disimulasikan dengan benar melalui parameter manual, dan tampil sesuai di UI.
+- Pendekatan OAT berhasil **meringkas jumlah pengujian dari 27 menjadi hanya 9 kombinasi** dengan tetap mencakup seluruh variasi penting antar variabel.
+- Script `run_oat_tests.py` berjalan lancar untuk otomatisasi uji, dengan hasil akurat dan bermanfaat untuk mendeteksi *mismatch* antara ekspektasi dan realita.
+
+✅ Ringkasan:
+- Validasi server-side belum membatasi input kosong pada field penting (judul).
+- Semua kombinasi diterima sistem, meskipun tidak seluruhnya semestinya valid.
+- Aplikasi stabil dan tangguh menangani input besar serta pengujian intensif.
+- Metode OAT terbukti efektif untuk efisiensi pengujian dan mendukung QA otomatis.
 
 ---
+
+
