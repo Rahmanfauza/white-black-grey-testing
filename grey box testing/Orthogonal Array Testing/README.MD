@@ -15,7 +15,7 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 
 ---
 
-🔍 Faktor dan Level yang Digunakan
+🔍 Faktor dan Level Pengujian
 
 | Faktor (Variabel)    | Level 1    | Level 2    | Level 3         |
 |----------------------|------------|------------|------------------|
@@ -23,11 +23,11 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 | Deskripsi Task       | Kosong     | Normal     | Sangat Panjang   |
 | Status Task (manual) | pending    | selesai    | in progress      |
 
-> Status dikontrol secara manual melalui POST request tambahan saat pengujian otomatis.
+> Status dikontrol secara manual melalui parameter POST saat pengujian otomatis.
 
 ---
 
-🧪 Kombinasi Pengujian: L9(3^3)
+🧪 Kombinasi Pengujian – L9(3³)
 
 | Test Case | Judul   | Deskripsi   | Status      | Ekspektasi                      |
 |-----------|---------|-------------|-------------|----------------------------------|
@@ -41,51 +41,45 @@ Orthogonal Array Testing (OAT) adalah teknik pengujian **Gray Box** yang menggun
 | TC8       | Panjang | Normal      | pending     | Valid                            |
 | TC9       | Panjang | Panjang     | selesai     | Valid                            |
 
-> ❗️ **Catatan:**  
-> Berdasarkan hasil aktual dari script `run_oat_tests.py`, semua kombinasi menghasilkan `valid`. Hal ini menunjukkan bahwa:  
-> - Validasi sistem mungkin belum membatasi input dengan ketat  
-> - Endpoint `/tasks/add` menerima input apapun selama session login valid
-
 ---
 
 💡 Logika Validasi Sistem
 
 - **Judul kosong** → seharusnya ditolak (`invalid`)
 - **Judul normal/panjang** → seharusnya diterima (`valid`)
-- **Deskripsi kosong/panjang** → tidak berpengaruh pada validasi (`valid`)
-- **Status** → tidak divalidasi karena tidak dimasukkan melalui form
+- **Deskripsi kosong/panjang** → tidak berpengaruh terhadap validasi
+- **Status** → tidak divalidasi karena tidak dikirim melalui form
 
 ---
 
 ⚙️ Implementasi Teknis
 
-- File `test_cases.csv` berisi 9 kombinasi input berdasarkan Orthogonal Array L9(3^3)
+- File `test_cases.csv` memuat 9 kombinasi input berdasarkan Orthogonal Array L9(3³)
 - Script `run_oat_tests.py`:
   - Membaca kombinasi dari CSV
   - Login otomatis sebagai user `airin`
-  - Mengirim data ke endpoint `/tasks/add` (POST request)
-  - Menentukan valid/invalid berdasarkan redirect ke `/dashboard`
-  - Membandingkan hasil aktual dengan kolom `ekspektasi`
+  - Mengirimkan data ke endpoint `/tasks/add` melalui POST
+  - Menentukan apakah input berhasil diproses (berdasarkan redirect ke `/dashboard`)
+  - Membandingkan hasil aktual dengan nilai `ekspektasi` dari CSV
 
 ---
 
 📊 Hasil Uji Aktual – Disertai Bukti Screenshot
 
 <img width="600" alt="TC1–TC2" src="https://github.com/user-attachments/assets/a3e0b903-ce60-4401-8562-48d5699fdf65" />
-
 <img width="600" alt="TC3–TC4" src="https://github.com/user-attachments/assets/c3c45afe-83c3-425b-9622-6bb8d317c36e" />
-
 <img width="600" alt="TC5–TC6" src="https://github.com/user-attachments/assets/c8b2c24c-d874-45ab-932b-b76560b17701" />
-
 <img width="600" alt="TC7–TC9" src="https://github.com/user-attachments/assets/cd68e515-4339-4cc6-97c4-e17135ed4e41" />
 
 ---
 
 🧠 Insight & Kesimpulan
 
-- Dengan OAT, jumlah test case berhasil ditekan dari 27 → hanya 9 kombinasi tanpa kehilangan cakupan
-- **Sistem menerima semua input** termasuk judul kosong, yang menunjukkan kurangnya validasi server-side
-- Aplikasi tetap stabil meskipun menerima input dengan teks sangat panjang
-- Pengujian otomatis melalui `run_oat_tests.py` sangat membantu mendeteksi inkonsistensi validasi
+- Dari 9 test case yang diuji, sistem **menganggap semua input valid**, termasuk kombinasi dengan **judul kosong** (TC1–TC3) yang **seharusnya invalid**.
+- Hasil ini menunjukkan bahwa validasi pada field *judul* **belum diterapkan dengan ketat** di sisi server.
+- Semua data berhasil disimpan dan muncul di halaman task list, menandakan bahwa **endpoint `/tasks/add` menerima semua input** selama user dalam sesi login.
+- Aplikasi tetap **stabil dan tidak mengalami crash**, bahkan saat menerima input deskripsi yang sangat panjang.
+- Pendekatan OAT memungkinkan **pengujian efisien** dengan hanya 9 kombinasi, tanpa kehilangan cakupan variasi logis.
+- Script `run_oat_tests.py` sangat membantu proses pengujian karena dapat **mendeteksi ketidaksesuaian antara ekspektasi dan realita** dengan cepat dan otomatis.
 
 ---
